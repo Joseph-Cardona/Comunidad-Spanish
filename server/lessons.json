@@ -1,0 +1,2553 @@
+[
+  {
+    "title": "Unit 1: Lesson 1",
+    "content": "Greetings & Farewells",
+    "unit": 1,
+    "level": "A1",
+    "type": "Lesson",
+    "xp_reward": 10,
+    "steps": [
+      {
+        "type": "info",
+        "text": "¡Hola!",
+        "translation": "Hello!"
+      },
+      {
+        "type": "choice",
+        "question": "¿Cómo se dice 'Hello'?",
+        "options": [
+          "Hola",
+          "Adiós",
+          "Gracias"
+        ],
+        "answer": "Hola"
+      },
+      {
+        "type": "choice",
+        "question": "¿Cómo se dice 'Good morning'?",
+        "options": [
+          "Buenas noches",
+          "Buen día",
+          "Buenos días"
+        ],
+        "answer": "Buenos días"
+      },
+      {
+        "type": "choice",
+        "question": "¿Qué significa 'Adiós'?",
+        "options": [
+          "Hello",
+          "Goodbye",
+          "Please"
+        ],
+        "answer": "Goodbye"
+      },
+      {
+        "type": "choice",
+        "question": "¿Cómo se dice 'Thank you'?",
+        "options": [
+          "De nada",
+          "Por favor",
+          "Gracias"
+        ],
+        "answer": "Gracias"
+      }
+    ]
+  },
+  {
+    "title": "Unit 1: Lesson 2",
+    "content": "The Alphabet",
+    "unit": 1,
+    "level": "A1",
+    "type": "Lesson",
+    "xp_reward": 10,
+    "steps": [
+      {
+        "type": "info",
+        "text": "La H es muda.",
+        "translation": "H is silent."
+      },
+      {
+        "type": "choice",
+        "question": "¿La H suena?",
+        "options": [
+          "Sí",
+          "No"
+        ],
+        "answer": "No"
+      },
+      {
+        "type": "choice",
+        "question": "¿Qué letra es única del español?",
+        "options": [
+          "Z",
+          "Ñ",
+          "W"
+        ],
+        "answer": "Ñ"
+      },
+      {
+        "type": "choice",
+        "question": "¿Cómo se dice 'alphabet'?",
+        "options": [
+          "abecedario",
+          "alfabeto",
+          "Ambas"
+        ],
+        "answer": "Ambas"
+      },
+      {
+        "type": "choice",
+        "question": "La 'J' suena parecido a la...",
+        "options": [
+          "'H' inglesa",
+          "'Y' inglesa",
+          "'L' inglesa"
+        ],
+        "answer": "'H' inglesa"
+      }
+    ]
+  },
+  {
+    "title": "Unit 1: Practice 1",
+    "content": "Review",
+    "unit": 1,
+    "level": "A1",
+    "type": "Practice",
+    "xp_reward": 15,
+    "steps": [
+      {
+        "type": "choice",
+        "question": "¿Cómo se dice 'Hello'?",
+        "options": [
+          "Hola",
+          "Adiós",
+          "Gracias"
+        ],
+        "answer": "Hola"
+      },
+      {
+        "type": "choice",
+        "question": "¿Cómo se dice 'Good morning'?",
+        "options": [
+          "Buenas noches",
+          "Buen día",
+          "Buenos días"
+        ],
+        "answer": "Buenos días"
+      },
+      {
+        "type": "choice",
+        "question": "¿Qué significa 'Adiós'?",
+        "options": [
+          "Hello",
+          "Goodbye",
+          "Please"
+        ],
+        "answer": "Goodbye"
+      },
+      {
+        "type": "choice",
+        "question": "¿La H suena?",
+        "options": [
+          "Sí",
+          "No"
+        ],
+        "answer": "No"
+      },
+      {
+        "type": "choice",
+        "question": "¿Qué letra es única del español?",
+        "options": [
+          "Z",
+          "Ñ",
+          "W"
+        ],
+        "answer": "Ñ"
+      },
+      {
+        "type": "choice",
+        "question": "¿Cómo se dice 'alphabet'?",
+        "options": [
+          "abecedario",
+          "alfabeto",
+          "Ambas"
+        ],
+        "answer": "Ambas"
+      }
+    ]
+  },
+  {
+    "title": "Unit 1: Lesson 3",
+    "content": "Numbers 0-10",
+    "unit": 1,
+    "level": "A1",
+    "type": "Lesson",
+    "xp_reward": 10,
+    "steps": [
+      {
+        "type": "info",
+        "text": "Uno, dos.",
+        "translation": "One, two."
+      },
+      {
+        "type": "choice",
+        "question": "¿Qué es 'tres'?",
+        "options": [
+          "1",
+          "2",
+          "3"
+        ],
+        "answer": "3"
+      },
+      {
+        "type": "choice",
+        "question": "¿Cómo se dice 'five'?",
+        "options": [
+          "cuatro",
+          "cinco",
+          "seis"
+        ],
+        "answer": "cinco"
+      },
+      {
+        "type": "choice",
+        "question": "Dos + dos =",
+        "options": [
+          "tres",
+          "cuatro",
+          "cinco"
+        ],
+        "answer": "cuatro"
+      },
+      {
+        "type": "choice",
+        "question": "Uno, ____, tres.",
+        "options": [
+          "dos",
+          "cuatro",
+          "cinco"
+        ],
+        "answer": "dos"
+      }
+    ]
+  },
+  {
+    "title": "Unit 1: Lesson 4",
+    "content": "Basic Phrases",
+    "unit": 1,
+    "level": "A1",
+    "type": "Lesson",
+    "xp_reward": 10,
+    "steps": [
+      {
+        "type": "info",
+        "text": "¿Cómo te llamas?",
+        "translation": "Name?"
+      },
+      {
+        "type": "choice",
+        "question": "¿Qué significa '¿Cómo te llamas?'?",
+        "options": [
+          "How are you?",
+          "What is your name?",
+          "Where from?"
+        ],
+        "answer": "What is your name?"
+      },
+      {
+        "type": "choice",
+        "question": "Para decir tu nombre dices: 'Me ______...'",
+        "options": [
+          "llamo",
+          "llamas",
+          "llama"
+        ],
+        "answer": "llamo"
+      },
+      {
+        "type": "choice",
+        "question": "¿Cómo se dice 'Please'?",
+        "options": [
+          "Gracias",
+          "Por favor",
+          "De nada"
+        ],
+        "answer": "Por favor"
+      },
+      {
+        "type": "choice",
+        "question": "Si alguien dice 'Gracias', tú respondes:",
+        "options": [
+          "Hola",
+          "De nada",
+          "Adiós"
+        ],
+        "answer": "De nada"
+      }
+    ]
+  },
+  {
+    "title": "Unit 1: Practice 2",
+    "content": "Review",
+    "unit": 1,
+    "level": "A1",
+    "type": "Practice",
+    "xp_reward": 15,
+    "steps": [
+      {
+        "type": "choice",
+        "question": "¿Qué es 'tres'?",
+        "options": [
+          "1",
+          "2",
+          "3"
+        ],
+        "answer": "3"
+      },
+      {
+        "type": "choice",
+        "question": "¿Cómo se dice 'five'?",
+        "options": [
+          "cuatro",
+          "cinco",
+          "seis"
+        ],
+        "answer": "cinco"
+      },
+      {
+        "type": "choice",
+        "question": "Dos + dos =",
+        "options": [
+          "tres",
+          "cuatro",
+          "cinco"
+        ],
+        "answer": "cuatro"
+      },
+      {
+        "type": "choice",
+        "question": "¿Qué significa '¿Cómo te llamas?'?",
+        "options": [
+          "How are you?",
+          "What is your name?",
+          "Where from?"
+        ],
+        "answer": "What is your name?"
+      },
+      {
+        "type": "choice",
+        "question": "Para decir tu nombre dices: 'Me ______...'",
+        "options": [
+          "llamo",
+          "llamas",
+          "llama"
+        ],
+        "answer": "llamo"
+      },
+      {
+        "type": "choice",
+        "question": "¿Cómo se dice 'Please'?",
+        "options": [
+          "Gracias",
+          "Por favor",
+          "De nada"
+        ],
+        "answer": "Por favor"
+      }
+    ]
+  },
+  {
+    "title": "Unit 1: Quiz",
+    "content": "Mastery",
+    "unit": 1,
+    "level": "A1",
+    "type": "Quiz",
+    "xp_reward": 50,
+    "steps": [
+      {
+        "type": "choice",
+        "question": "¿Cómo se dice 'Hello'?",
+        "options": [
+          "Hola",
+          "Adiós",
+          "Gracias"
+        ],
+        "answer": "Hola"
+      },
+      {
+        "type": "choice",
+        "question": "¿Cómo se dice 'Good morning'?",
+        "options": [
+          "Buenas noches",
+          "Buen día",
+          "Buenos días"
+        ],
+        "answer": "Buenos días"
+      },
+      {
+        "type": "choice",
+        "question": "¿La H suena?",
+        "options": [
+          "Sí",
+          "No"
+        ],
+        "answer": "No"
+      },
+      {
+        "type": "choice",
+        "question": "¿Qué letra es única del español?",
+        "options": [
+          "Z",
+          "Ñ",
+          "W"
+        ],
+        "answer": "Ñ"
+      },
+      {
+        "type": "choice",
+        "question": "¿Qué es 'tres'?",
+        "options": [
+          "1",
+          "2",
+          "3"
+        ],
+        "answer": "3"
+      },
+      {
+        "type": "choice",
+        "question": "¿Cómo se dice 'five'?",
+        "options": [
+          "cuatro",
+          "cinco",
+          "seis"
+        ],
+        "answer": "cinco"
+      },
+      {
+        "type": "choice",
+        "question": "¿Qué significa '¿Cómo te llamas?'?",
+        "options": [
+          "How are you?",
+          "What is your name?",
+          "Where from?"
+        ],
+        "answer": "What is your name?"
+      },
+      {
+        "type": "choice",
+        "question": "Para decir tu nombre dices: 'Me ______...'",
+        "options": [
+          "llamo",
+          "llamas",
+          "llama"
+        ],
+        "answer": "llamo"
+      }
+    ]
+  },
+  {
+    "title": "Unit 2: Lesson 1",
+    "content": "Numbers 11-20",
+    "unit": 2,
+    "level": "A1",
+    "type": "Lesson",
+    "xp_reward": 10,
+    "steps": [
+      {
+        "type": "info",
+        "text": "Diez, once, doce...",
+        "translation": "10, 11, 12..."
+      },
+      {
+        "type": "choice",
+        "question": "¿Qué es 15?",
+        "options": [
+          "quince",
+          "cinco",
+          "cincuenta"
+        ],
+        "answer": "quince"
+      },
+      {
+        "type": "choice",
+        "question": "Diez + dos =",
+        "options": [
+          "doce",
+          "veinte",
+          "dos"
+        ],
+        "answer": "doce"
+      },
+      {
+        "type": "choice",
+        "question": "18 = ?",
+        "options": [
+          "dieciocho",
+          "diecisiete",
+          "diecinueve"
+        ],
+        "answer": "dieciocho"
+      },
+      {
+        "type": "choice",
+        "question": "19 = ?",
+        "options": [
+          "diecinueve",
+          "quince",
+          "veinte"
+        ],
+        "answer": "diecinueve"
+      }
+    ]
+  },
+  {
+    "title": "Unit 2: Lesson 2",
+    "content": "Colors",
+    "unit": 2,
+    "level": "A1",
+    "type": "Lesson",
+    "xp_reward": 10,
+    "steps": [
+      {
+        "type": "info",
+        "text": "Azul, rojo, amarillo.",
+        "translation": "Blue, red, yellow."
+      },
+      {
+        "type": "choice",
+        "question": "¿Color de la manzana?",
+        "options": [
+          "Roja",
+          "Azul",
+          "Verde"
+        ],
+        "answer": "Roja"
+      },
+      {
+        "type": "choice",
+        "question": "¿Cómo se dice 'yellow'?",
+        "options": [
+          "amarillo",
+          "blanco",
+          "negro"
+        ],
+        "answer": "amarillo"
+      },
+      {
+        "type": "choice",
+        "question": "Color de noche?",
+        "options": [
+          "Negro",
+          "Blanco",
+          "Verde"
+        ],
+        "answer": "Negro"
+      },
+      {
+        "type": "choice",
+        "question": "Azul =",
+        "options": [
+          "Blue",
+          "Red",
+          "Green"
+        ],
+        "answer": "Blue"
+      }
+    ]
+  },
+  {
+    "title": "Unit 2: Practice 1",
+    "content": "Review",
+    "unit": 2,
+    "level": "A1",
+    "type": "Practice",
+    "xp_reward": 15,
+    "steps": [
+      {
+        "type": "choice",
+        "question": "¿Qué es 15?",
+        "options": [
+          "quince",
+          "cinco",
+          "cincuenta"
+        ],
+        "answer": "quince"
+      },
+      {
+        "type": "choice",
+        "question": "Diez + dos =",
+        "options": [
+          "doce",
+          "veinte",
+          "dos"
+        ],
+        "answer": "doce"
+      },
+      {
+        "type": "choice",
+        "question": "18 = ?",
+        "options": [
+          "dieciocho",
+          "diecisiete",
+          "diecinueve"
+        ],
+        "answer": "dieciocho"
+      },
+      {
+        "type": "choice",
+        "question": "¿Color de la manzana?",
+        "options": [
+          "Roja",
+          "Azul",
+          "Verde"
+        ],
+        "answer": "Roja"
+      },
+      {
+        "type": "choice",
+        "question": "¿Cómo se dice 'yellow'?",
+        "options": [
+          "amarillo",
+          "blanco",
+          "negro"
+        ],
+        "answer": "amarillo"
+      },
+      {
+        "type": "choice",
+        "question": "Color de noche?",
+        "options": [
+          "Negro",
+          "Blanco",
+          "Verde"
+        ],
+        "answer": "Negro"
+      }
+    ]
+  },
+  {
+    "title": "Unit 2: Lesson 3",
+    "content": "Nationalities",
+    "unit": 2,
+    "level": "A1",
+    "type": "Lesson",
+    "xp_reward": 10,
+    "steps": [
+      {
+        "type": "info",
+        "text": "Soy de España.",
+        "translation": "I am from Spain."
+      },
+      {
+        "type": "choice",
+        "question": "¿De ______ eres?",
+        "options": [
+          "dónde",
+          "cómo",
+          "qué"
+        ],
+        "answer": "dónde"
+      },
+      {
+        "type": "choice",
+        "question": "Soy ______ (from Spain).",
+        "options": [
+          "español",
+          "mexicano",
+          "americano"
+        ],
+        "answer": "español"
+      },
+      {
+        "type": "choice",
+        "question": "Ella es mexicana.",
+        "options": [
+          "mexicana",
+          "mexicano",
+          "mexicanas"
+        ],
+        "answer": "mexicana"
+      },
+      {
+        "type": "choice",
+        "question": "¿Eres de USA?",
+        "options": [
+          "Sí",
+          "No"
+        ],
+        "answer": "Sí"
+      }
+    ]
+  },
+  {
+    "title": "Unit 2: Lesson 4",
+    "content": "Professions",
+    "unit": 2,
+    "level": "A1",
+    "type": "Lesson",
+    "xp_reward": 10,
+    "steps": [
+      {
+        "type": "info",
+        "text": "Soy profesor.",
+        "translation": "I am a teacher."
+      },
+      {
+        "type": "choice",
+        "question": "¿Teacher?",
+        "options": [
+          "profesor",
+          "estudiante",
+          "médico"
+        ],
+        "answer": "profesor"
+      },
+      {
+        "type": "choice",
+        "question": "Doctor?",
+        "options": [
+          "médico",
+          "profesor",
+          "camarero"
+        ],
+        "answer": "médico"
+      },
+      {
+        "type": "choice",
+        "question": "Yo ______ estudiante.",
+        "options": [
+          "soy",
+          "estoy",
+          "tengo"
+        ],
+        "answer": "soy"
+      },
+      {
+        "type": "choice",
+        "question": "¿Profesión?",
+        "options": [
+          "Sí",
+          "No"
+        ],
+        "answer": "Sí"
+      }
+    ]
+  },
+  {
+    "title": "Unit 2: Practice 2",
+    "content": "Review",
+    "unit": 2,
+    "level": "A1",
+    "type": "Practice",
+    "xp_reward": 15,
+    "steps": [
+      {
+        "type": "choice",
+        "question": "¿De ______ eres?",
+        "options": [
+          "dónde",
+          "cómo",
+          "qué"
+        ],
+        "answer": "dónde"
+      },
+      {
+        "type": "choice",
+        "question": "Soy ______ (from Spain).",
+        "options": [
+          "español",
+          "mexicano",
+          "americano"
+        ],
+        "answer": "español"
+      },
+      {
+        "type": "choice",
+        "question": "Ella es mexicana.",
+        "options": [
+          "mexicana",
+          "mexicano",
+          "mexicanas"
+        ],
+        "answer": "mexicana"
+      },
+      {
+        "type": "choice",
+        "question": "¿Teacher?",
+        "options": [
+          "profesor",
+          "estudiante",
+          "médico"
+        ],
+        "answer": "profesor"
+      },
+      {
+        "type": "choice",
+        "question": "Doctor?",
+        "options": [
+          "médico",
+          "profesor",
+          "camarero"
+        ],
+        "answer": "médico"
+      },
+      {
+        "type": "choice",
+        "question": "Yo ______ estudiante.",
+        "options": [
+          "soy",
+          "estoy",
+          "tengo"
+        ],
+        "answer": "soy"
+      }
+    ]
+  },
+  {
+    "title": "Unit 2: Quiz",
+    "content": "Mastery",
+    "unit": 2,
+    "level": "A1",
+    "type": "Quiz",
+    "xp_reward": 50,
+    "steps": [
+      {
+        "type": "choice",
+        "question": "¿Qué es 15?",
+        "options": [
+          "quince",
+          "cinco",
+          "cincuenta"
+        ],
+        "answer": "quince"
+      },
+      {
+        "type": "choice",
+        "question": "Diez + dos =",
+        "options": [
+          "doce",
+          "veinte",
+          "dos"
+        ],
+        "answer": "doce"
+      },
+      {
+        "type": "choice",
+        "question": "¿Color de la manzana?",
+        "options": [
+          "Roja",
+          "Azul",
+          "Verde"
+        ],
+        "answer": "Roja"
+      },
+      {
+        "type": "choice",
+        "question": "¿Cómo se dice 'yellow'?",
+        "options": [
+          "amarillo",
+          "blanco",
+          "negro"
+        ],
+        "answer": "amarillo"
+      },
+      {
+        "type": "choice",
+        "question": "¿De ______ eres?",
+        "options": [
+          "dónde",
+          "cómo",
+          "qué"
+        ],
+        "answer": "dónde"
+      },
+      {
+        "type": "choice",
+        "question": "Soy ______ (from Spain).",
+        "options": [
+          "español",
+          "mexicano",
+          "americano"
+        ],
+        "answer": "español"
+      },
+      {
+        "type": "choice",
+        "question": "¿Teacher?",
+        "options": [
+          "profesor",
+          "estudiante",
+          "médico"
+        ],
+        "answer": "profesor"
+      },
+      {
+        "type": "choice",
+        "question": "Doctor?",
+        "options": [
+          "médico",
+          "profesor",
+          "camarero"
+        ],
+        "answer": "médico"
+      }
+    ]
+  },
+  {
+    "title": "Unit 3: Lesson 1",
+    "content": "Family",
+    "unit": 3,
+    "level": "A1",
+    "type": "Lesson",
+    "xp_reward": 10,
+    "steps": [
+      {
+        "type": "info",
+        "text": "Madre, padre.",
+        "translation": "Mother, father."
+      },
+      {
+        "type": "choice",
+        "question": "Madre de mi madre?",
+        "options": [
+          "abuela",
+          "tía"
+        ],
+        "answer": "abuela"
+      },
+      {
+        "type": "choice",
+        "question": "Sister?",
+        "options": [
+          "hermana",
+          "hijo"
+        ],
+        "answer": "hermana"
+      },
+      {
+        "type": "choice",
+        "question": "Hijo de mi tía?",
+        "options": [
+          "primo",
+          "sobrino"
+        ],
+        "answer": "primo"
+      },
+      {
+        "type": "choice",
+        "question": "Siblings?",
+        "options": [
+          "hermanos",
+          "padres"
+        ],
+        "answer": "hermanos"
+      }
+    ]
+  },
+  {
+    "title": "Unit 3: Lesson 2",
+    "content": "Physical",
+    "unit": 3,
+    "level": "A1",
+    "type": "Lesson",
+    "xp_reward": 10,
+    "steps": [
+      {
+        "type": "info",
+        "text": "Alto, bajo.",
+        "translation": "Tall, short."
+      },
+      {
+        "type": "choice",
+        "question": "Alto?",
+        "options": [
+          "Tall",
+          "Short"
+        ],
+        "answer": "Tall"
+      },
+      {
+        "type": "choice",
+        "question": "Contrario de bajo?",
+        "options": [
+          "alto",
+          "gordo"
+        ],
+        "answer": "alto"
+      },
+      {
+        "type": "choice",
+        "question": "Pelo (blonde)?",
+        "options": [
+          "rubio",
+          "moreno"
+        ],
+        "answer": "rubio"
+      },
+      {
+        "type": "choice",
+        "question": "Guapo?",
+        "options": [
+          "Handsome",
+          "Ugly"
+        ],
+        "answer": "Handsome"
+      }
+    ]
+  },
+  {
+    "title": "Unit 3: Practice 1",
+    "content": "Review",
+    "unit": 3,
+    "level": "A1",
+    "type": "Practice",
+    "xp_reward": 15,
+    "steps": [
+      {
+        "type": "choice",
+        "question": "Madre de mi madre?",
+        "options": [
+          "abuela",
+          "tía"
+        ],
+        "answer": "abuela"
+      },
+      {
+        "type": "choice",
+        "question": "Sister?",
+        "options": [
+          "hermana",
+          "hijo"
+        ],
+        "answer": "hermana"
+      },
+      {
+        "type": "choice",
+        "question": "Hijo de mi tía?",
+        "options": [
+          "primo",
+          "sobrino"
+        ],
+        "answer": "primo"
+      },
+      {
+        "type": "choice",
+        "question": "Alto?",
+        "options": [
+          "Tall",
+          "Short"
+        ],
+        "answer": "Tall"
+      },
+      {
+        "type": "choice",
+        "question": "Contrario de bajo?",
+        "options": [
+          "alto",
+          "gordo"
+        ],
+        "answer": "alto"
+      },
+      {
+        "type": "choice",
+        "question": "Pelo (blonde)?",
+        "options": [
+          "rubio",
+          "moreno"
+        ],
+        "answer": "rubio"
+      }
+    ]
+  },
+  {
+    "title": "Unit 3: Lesson 3",
+    "content": "Personality",
+    "unit": 3,
+    "level": "A1",
+    "type": "Lesson",
+    "xp_reward": 10,
+    "steps": [
+      {
+        "type": "info",
+        "text": "Divertido.",
+        "translation": "Funny."
+      },
+      {
+        "type": "choice",
+        "question": "Funny?",
+        "options": [
+          "divertido",
+          "serio"
+        ],
+        "answer": "divertido"
+      },
+      {
+        "type": "choice",
+        "question": "Estudia mucho?",
+        "options": [
+          "inteligente",
+          "perezosa"
+        ],
+        "answer": "inteligente"
+      },
+      {
+        "type": "choice",
+        "question": "Shy?",
+        "options": [
+          "tímida",
+          "alegre"
+        ],
+        "answer": "tímida"
+      },
+      {
+        "type": "choice",
+        "question": "No simpático?",
+        "options": [
+          "antipático",
+          "bueno"
+        ],
+        "answer": "antipático"
+      }
+    ]
+  },
+  {
+    "title": "Unit 3: Lesson 4",
+    "content": "Possessives",
+    "unit": 3,
+    "level": "A1",
+    "type": "Lesson",
+    "xp_reward": 10,
+    "steps": [
+      {
+        "type": "info",
+        "text": "Mi, tu, su.",
+        "translation": "My, your, his/her."
+      },
+      {
+        "type": "choice",
+        "question": "My?",
+        "options": [
+          "Mi",
+          "Tu"
+        ],
+        "answer": "Mi"
+      },
+      {
+        "type": "choice",
+        "question": "Your book?",
+        "options": [
+          "Tu",
+          "Mi"
+        ],
+        "answer": "Tu"
+      },
+      {
+        "type": "choice",
+        "question": "His cat?",
+        "options": [
+          "su",
+          "mis"
+        ],
+        "answer": "su"
+      },
+      {
+        "type": "choice",
+        "question": "My parents?",
+        "options": [
+          "Mis",
+          "Mi"
+        ],
+        "answer": "Mis"
+      }
+    ]
+  },
+  {
+    "title": "Unit 3: Practice 2",
+    "content": "Review",
+    "unit": 3,
+    "level": "A1",
+    "type": "Practice",
+    "xp_reward": 15,
+    "steps": [
+      {
+        "type": "choice",
+        "question": "Funny?",
+        "options": [
+          "divertido",
+          "serio"
+        ],
+        "answer": "divertido"
+      },
+      {
+        "type": "choice",
+        "question": "Estudia mucho?",
+        "options": [
+          "inteligente",
+          "perezosa"
+        ],
+        "answer": "inteligente"
+      },
+      {
+        "type": "choice",
+        "question": "Shy?",
+        "options": [
+          "tímida",
+          "alegre"
+        ],
+        "answer": "tímida"
+      },
+      {
+        "type": "choice",
+        "question": "My?",
+        "options": [
+          "Mi",
+          "Tu"
+        ],
+        "answer": "Mi"
+      },
+      {
+        "type": "choice",
+        "question": "Your book?",
+        "options": [
+          "Tu",
+          "Mi"
+        ],
+        "answer": "Tu"
+      },
+      {
+        "type": "choice",
+        "question": "His cat?",
+        "options": [
+          "su",
+          "mis"
+        ],
+        "answer": "su"
+      }
+    ]
+  },
+  {
+    "title": "Unit 3: Quiz",
+    "content": "Mastery",
+    "unit": 3,
+    "level": "A1",
+    "type": "Quiz",
+    "xp_reward": 50,
+    "steps": [
+      {
+        "type": "choice",
+        "question": "Madre de mi madre?",
+        "options": [
+          "abuela",
+          "tía"
+        ],
+        "answer": "abuela"
+      },
+      {
+        "type": "choice",
+        "question": "Sister?",
+        "options": [
+          "hermana",
+          "hijo"
+        ],
+        "answer": "hermana"
+      },
+      {
+        "type": "choice",
+        "question": "Alto?",
+        "options": [
+          "Tall",
+          "Short"
+        ],
+        "answer": "Tall"
+      },
+      {
+        "type": "choice",
+        "question": "Contrario de bajo?",
+        "options": [
+          "alto",
+          "gordo"
+        ],
+        "answer": "alto"
+      },
+      {
+        "type": "choice",
+        "question": "Funny?",
+        "options": [
+          "divertido",
+          "serio"
+        ],
+        "answer": "divertido"
+      },
+      {
+        "type": "choice",
+        "question": "Estudia mucho?",
+        "options": [
+          "inteligente",
+          "perezosa"
+        ],
+        "answer": "inteligente"
+      },
+      {
+        "type": "choice",
+        "question": "My?",
+        "options": [
+          "Mi",
+          "Tu"
+        ],
+        "answer": "Mi"
+      },
+      {
+        "type": "choice",
+        "question": "Your book?",
+        "options": [
+          "Tu",
+          "Mi"
+        ],
+        "answer": "Tu"
+      }
+    ]
+  },
+  {
+    "title": "Unit 4: Lesson 1",
+    "content": "AR Verbs",
+    "unit": 4,
+    "level": "A1",
+    "type": "Lesson",
+    "xp_reward": 10,
+    "steps": [
+      {
+        "type": "info",
+        "text": "Yo hablo.",
+        "translation": "I speak."
+      },
+      {
+        "type": "choice",
+        "question": "Yo (hablar)?",
+        "options": [
+          "hablo",
+          "habla"
+        ],
+        "answer": "hablo"
+      },
+      {
+        "type": "choice",
+        "question": "Tú (estudiar)?",
+        "options": [
+          "estudias",
+          "estudiamos"
+        ],
+        "answer": "estudias"
+      },
+      {
+        "type": "choice",
+        "question": "Nosotros (cantar)?",
+        "options": [
+          "cantamos",
+          "canta"
+        ],
+        "answer": "cantamos"
+      },
+      {
+        "type": "choice",
+        "question": "Ellos (trabajar)?",
+        "options": [
+          "trabajan",
+          "trabaja"
+        ],
+        "answer": "trabajan"
+      }
+    ]
+  },
+  {
+    "title": "Unit 4: Lesson 2",
+    "content": "ER/IR Verbs",
+    "unit": 4,
+    "level": "A1",
+    "type": "Lesson",
+    "xp_reward": 10,
+    "steps": [
+      {
+        "type": "info",
+        "text": "Yo como.",
+        "translation": "I eat."
+      },
+      {
+        "type": "choice",
+        "question": "Yo (comer)?",
+        "options": [
+          "como",
+          "come"
+        ],
+        "answer": "como"
+      },
+      {
+        "type": "choice",
+        "question": "Tú (vivir)?",
+        "options": [
+          "vives",
+          "vive"
+        ],
+        "answer": "vives"
+      },
+      {
+        "type": "choice",
+        "question": "Él (beber)?",
+        "options": [
+          "bebe",
+          "bebo"
+        ],
+        "answer": "bebe"
+      },
+      {
+        "type": "choice",
+        "question": "Nosotros (escribir)?",
+        "options": [
+          "escribimos",
+          "escriben"
+        ],
+        "answer": "escribimos"
+      }
+    ]
+  },
+  {
+    "title": "Unit 4: Practice 1",
+    "content": "Review",
+    "unit": 4,
+    "level": "A1",
+    "type": "Practice",
+    "xp_reward": 15,
+    "steps": [
+      {
+        "type": "choice",
+        "question": "Yo (hablar)?",
+        "options": [
+          "hablo",
+          "habla"
+        ],
+        "answer": "hablo"
+      },
+      {
+        "type": "choice",
+        "question": "Tú (estudiar)?",
+        "options": [
+          "estudias",
+          "estudiamos"
+        ],
+        "answer": "estudias"
+      },
+      {
+        "type": "choice",
+        "question": "Nosotros (cantar)?",
+        "options": [
+          "cantamos",
+          "canta"
+        ],
+        "answer": "cantamos"
+      },
+      {
+        "type": "choice",
+        "question": "Yo (comer)?",
+        "options": [
+          "como",
+          "come"
+        ],
+        "answer": "como"
+      },
+      {
+        "type": "choice",
+        "question": "Tú (vivir)?",
+        "options": [
+          "vives",
+          "vive"
+        ],
+        "answer": "vives"
+      },
+      {
+        "type": "choice",
+        "question": "Él (beber)?",
+        "options": [
+          "bebe",
+          "bebo"
+        ],
+        "answer": "bebe"
+      }
+    ]
+  },
+  {
+    "title": "Unit 4: Lesson 3",
+    "content": "Days",
+    "unit": 4,
+    "level": "A1",
+    "type": "Lesson",
+    "xp_reward": 10,
+    "steps": [
+      {
+        "type": "info",
+        "text": "Lunes, martes.",
+        "translation": "Monday, Tuesday."
+      },
+      {
+        "type": "choice",
+        "question": "Hoy?",
+        "options": [
+          "Lunes",
+          "Mañana"
+        ],
+        "answer": "Lunes"
+      },
+      {
+        "type": "choice",
+        "question": "Saturday?",
+        "options": [
+          "Sábado",
+          "Domingo"
+        ],
+        "answer": "Sábado"
+      },
+      {
+        "type": "choice",
+        "question": "Primero?",
+        "options": [
+          "Lunes",
+          "Domingo"
+        ],
+        "answer": "Lunes"
+      },
+      {
+        "type": "choice",
+        "question": "Después Jueves?",
+        "options": [
+          "Viernes",
+          "Miércoles"
+        ],
+        "answer": "Viernes"
+      }
+    ]
+  },
+  {
+    "title": "Unit 4: Lesson 4",
+    "content": "Routine",
+    "unit": 4,
+    "level": "A1",
+    "type": "Lesson",
+    "xp_reward": 10,
+    "steps": [
+      {
+        "type": "info",
+        "text": "Me levanto.",
+        "translation": "I get up."
+      },
+      {
+        "type": "choice",
+        "question": "Breakfast?",
+        "options": [
+          "desayuno",
+          "ceno"
+        ],
+        "answer": "desayuno"
+      },
+      {
+        "type": "choice",
+        "question": "You sleep?",
+        "options": [
+          "duermes",
+          "duermo"
+        ],
+        "answer": "duermes"
+      },
+      {
+        "type": "choice",
+        "question": "Vuelvo a casa?",
+        "options": [
+          "vuelvo",
+          "voy"
+        ],
+        "answer": "vuelvo"
+      },
+      {
+        "type": "choice",
+        "question": "Veo TV?",
+        "options": [
+          "veo",
+          "miro"
+        ],
+        "answer": "veo"
+      }
+    ]
+  },
+  {
+    "title": "Unit 4: Practice 2",
+    "content": "Review",
+    "unit": 4,
+    "level": "A1",
+    "type": "Practice",
+    "xp_reward": 15,
+    "steps": [
+      {
+        "type": "choice",
+        "question": "Hoy?",
+        "options": [
+          "Lunes",
+          "Mañana"
+        ],
+        "answer": "Lunes"
+      },
+      {
+        "type": "choice",
+        "question": "Saturday?",
+        "options": [
+          "Sábado",
+          "Domingo"
+        ],
+        "answer": "Sábado"
+      },
+      {
+        "type": "choice",
+        "question": "Primero?",
+        "options": [
+          "Lunes",
+          "Domingo"
+        ],
+        "answer": "Lunes"
+      },
+      {
+        "type": "choice",
+        "question": "Breakfast?",
+        "options": [
+          "desayuno",
+          "ceno"
+        ],
+        "answer": "desayuno"
+      },
+      {
+        "type": "choice",
+        "question": "You sleep?",
+        "options": [
+          "duermes",
+          "duermo"
+        ],
+        "answer": "duermes"
+      },
+      {
+        "type": "choice",
+        "question": "Vuelvo a casa?",
+        "options": [
+          "vuelvo",
+          "voy"
+        ],
+        "answer": "vuelvo"
+      }
+    ]
+  },
+  {
+    "title": "Unit 4: Quiz",
+    "content": "Mastery",
+    "unit": 4,
+    "level": "A1",
+    "type": "Quiz",
+    "xp_reward": 50,
+    "steps": [
+      {
+        "type": "choice",
+        "question": "Yo (hablar)?",
+        "options": [
+          "hablo",
+          "habla"
+        ],
+        "answer": "hablo"
+      },
+      {
+        "type": "choice",
+        "question": "Tú (estudiar)?",
+        "options": [
+          "estudias",
+          "estudiamos"
+        ],
+        "answer": "estudias"
+      },
+      {
+        "type": "choice",
+        "question": "Yo (comer)?",
+        "options": [
+          "como",
+          "come"
+        ],
+        "answer": "como"
+      },
+      {
+        "type": "choice",
+        "question": "Tú (vivir)?",
+        "options": [
+          "vives",
+          "vive"
+        ],
+        "answer": "vives"
+      },
+      {
+        "type": "choice",
+        "question": "Hoy?",
+        "options": [
+          "Lunes",
+          "Mañana"
+        ],
+        "answer": "Lunes"
+      },
+      {
+        "type": "choice",
+        "question": "Saturday?",
+        "options": [
+          "Sábado",
+          "Domingo"
+        ],
+        "answer": "Sábado"
+      },
+      {
+        "type": "choice",
+        "question": "Breakfast?",
+        "options": [
+          "desayuno",
+          "ceno"
+        ],
+        "answer": "desayuno"
+      },
+      {
+        "type": "choice",
+        "question": "You sleep?",
+        "options": [
+          "duermes",
+          "duermo"
+        ],
+        "answer": "duermes"
+      }
+    ]
+  },
+  {
+    "title": "Unit 5: Lesson 1",
+    "content": "House",
+    "unit": 5,
+    "level": "A1",
+    "type": "Lesson",
+    "xp_reward": 10,
+    "steps": [
+      {
+        "type": "info",
+        "text": "Cocina, baño.",
+        "translation": "Kitchen, bathroom."
+      },
+      {
+        "type": "choice",
+        "question": "Dormir?",
+        "options": [
+          "dormitorio",
+          "cocina"
+        ],
+        "answer": "dormitorio"
+      },
+      {
+        "type": "choice",
+        "question": "Cocinar?",
+        "options": [
+          "cocina",
+          "baño"
+        ],
+        "answer": "cocina"
+      },
+      {
+        "type": "choice",
+        "question": "Garden?",
+        "options": [
+          "jardín",
+          "patio"
+        ],
+        "answer": "jardín"
+      },
+      {
+        "type": "choice",
+        "question": "Baño?",
+        "options": [
+          "baño",
+          "comedor"
+        ],
+        "answer": "baño"
+      }
+    ]
+  },
+  {
+    "title": "Unit 5: Lesson 2",
+    "content": "Furniture",
+    "unit": 5,
+    "level": "A1",
+    "type": "Lesson",
+    "xp_reward": 10,
+    "steps": [
+      {
+        "type": "info",
+        "text": "Mesa, silla.",
+        "translation": "Table, chair."
+      },
+      {
+        "type": "choice",
+        "question": "Silla?",
+        "options": [
+          "silla",
+          "mesa"
+        ],
+        "answer": "silla"
+      },
+      {
+        "type": "choice",
+        "question": "Estantería?",
+        "options": [
+          "estantería",
+          "cama"
+        ],
+        "answer": "estantería"
+      },
+      {
+        "type": "choice",
+        "question": "Cama?",
+        "options": [
+          "cama",
+          "mesa"
+        ],
+        "answer": "cama"
+      },
+      {
+        "type": "choice",
+        "question": "Mesa comedor?",
+        "options": [
+          "mesa",
+          "sofá"
+        ],
+        "answer": "mesa"
+      }
+    ]
+  },
+  {
+    "title": "Unit 5: Practice 1",
+    "content": "Review",
+    "unit": 5,
+    "level": "A1",
+    "type": "Practice",
+    "xp_reward": 15,
+    "steps": [
+      {
+        "type": "choice",
+        "question": "Dormir?",
+        "options": [
+          "dormitorio",
+          "cocina"
+        ],
+        "answer": "dormitorio"
+      },
+      {
+        "type": "choice",
+        "question": "Cocinar?",
+        "options": [
+          "cocina",
+          "baño"
+        ],
+        "answer": "cocina"
+      },
+      {
+        "type": "choice",
+        "question": "Garden?",
+        "options": [
+          "jardín",
+          "patio"
+        ],
+        "answer": "jardín"
+      },
+      {
+        "type": "choice",
+        "question": "Silla?",
+        "options": [
+          "silla",
+          "mesa"
+        ],
+        "answer": "silla"
+      },
+      {
+        "type": "choice",
+        "question": "Estantería?",
+        "options": [
+          "estantería",
+          "cama"
+        ],
+        "answer": "estantería"
+      },
+      {
+        "type": "choice",
+        "question": "Cama?",
+        "options": [
+          "cama",
+          "mesa"
+        ],
+        "answer": "cama"
+      }
+    ]
+  },
+  {
+    "title": "Unit 5: Lesson 3",
+    "content": "City",
+    "unit": 5,
+    "level": "A1",
+    "type": "Lesson",
+    "xp_reward": 10,
+    "steps": [
+      {
+        "type": "info",
+        "text": "Parque, cine.",
+        "translation": "Park, cinema."
+      },
+      {
+        "type": "choice",
+        "question": "Dinero?",
+        "options": [
+          "banco",
+          "cine"
+        ],
+        "answer": "banco"
+      },
+      {
+        "type": "choice",
+        "question": "Película?",
+        "options": [
+          "cine",
+          "teatro"
+        ],
+        "answer": "cine"
+      },
+      {
+        "type": "choice",
+        "question": "Medicina?",
+        "options": [
+          "farmacia",
+          "panadería"
+        ],
+        "answer": "farmacia"
+      },
+      {
+        "type": "choice",
+        "question": "Parque?",
+        "options": [
+          "parque",
+          "hospital"
+        ],
+        "answer": "parque"
+      }
+    ]
+  },
+  {
+    "title": "Unit 5: Lesson 4",
+    "content": "Directions",
+    "unit": 5,
+    "level": "A1",
+    "type": "Lesson",
+    "xp_reward": 10,
+    "steps": [
+      {
+        "type": "info",
+        "text": "Derecha, izquierda.",
+        "translation": "Right, left."
+      },
+      {
+        "type": "choice",
+        "question": "Right?",
+        "options": [
+          "Derecha",
+          "Izquierda"
+        ],
+        "answer": "Derecha"
+      },
+      {
+        "type": "choice",
+        "question": "Left?",
+        "options": [
+          "Izquierda",
+          "Derecha"
+        ],
+        "answer": "Izquierda"
+      },
+      {
+        "type": "choice",
+        "question": "Straight?",
+        "options": [
+          "recto",
+          "derecha"
+        ],
+        "answer": "recto"
+      },
+      {
+        "type": "choice",
+        "question": "Near?",
+        "options": [
+          "cerca",
+          "lejos"
+        ],
+        "answer": "cerca"
+      }
+    ]
+  },
+  {
+    "title": "Unit 5: Practice 2",
+    "content": "Review",
+    "unit": 5,
+    "level": "A1",
+    "type": "Practice",
+    "xp_reward": 15,
+    "steps": [
+      {
+        "type": "choice",
+        "question": "Dinero?",
+        "options": [
+          "banco",
+          "cine"
+        ],
+        "answer": "banco"
+      },
+      {
+        "type": "choice",
+        "question": "Película?",
+        "options": [
+          "cine",
+          "teatro"
+        ],
+        "answer": "cine"
+      },
+      {
+        "type": "choice",
+        "question": "Medicina?",
+        "options": [
+          "farmacia",
+          "panadería"
+        ],
+        "answer": "farmacia"
+      },
+      {
+        "type": "choice",
+        "question": "Right?",
+        "options": [
+          "Derecha",
+          "Izquierda"
+        ],
+        "answer": "Derecha"
+      },
+      {
+        "type": "choice",
+        "question": "Left?",
+        "options": [
+          "Izquierda",
+          "Derecha"
+        ],
+        "answer": "Izquierda"
+      },
+      {
+        "type": "choice",
+        "question": "Straight?",
+        "options": [
+          "recto",
+          "derecha"
+        ],
+        "answer": "recto"
+      }
+    ]
+  },
+  {
+    "title": "Unit 5: Quiz",
+    "content": "Mastery",
+    "unit": 5,
+    "level": "A1",
+    "type": "Quiz",
+    "xp_reward": 50,
+    "steps": [
+      {
+        "type": "choice",
+        "question": "Dormir?",
+        "options": [
+          "dormitorio",
+          "cocina"
+        ],
+        "answer": "dormitorio"
+      },
+      {
+        "type": "choice",
+        "question": "Cocinar?",
+        "options": [
+          "cocina",
+          "baño"
+        ],
+        "answer": "cocina"
+      },
+      {
+        "type": "choice",
+        "question": "Silla?",
+        "options": [
+          "silla",
+          "mesa"
+        ],
+        "answer": "silla"
+      },
+      {
+        "type": "choice",
+        "question": "Estantería?",
+        "options": [
+          "estantería",
+          "cama"
+        ],
+        "answer": "estantería"
+      },
+      {
+        "type": "choice",
+        "question": "Dinero?",
+        "options": [
+          "banco",
+          "cine"
+        ],
+        "answer": "banco"
+      },
+      {
+        "type": "choice",
+        "question": "Película?",
+        "options": [
+          "cine",
+          "teatro"
+        ],
+        "answer": "cine"
+      },
+      {
+        "type": "choice",
+        "question": "Right?",
+        "options": [
+          "Derecha",
+          "Izquierda"
+        ],
+        "answer": "Derecha"
+      },
+      {
+        "type": "choice",
+        "question": "Left?",
+        "options": [
+          "Izquierda",
+          "Derecha"
+        ],
+        "answer": "Izquierda"
+      }
+    ]
+  },
+  {
+    "title": "Unit 6: Lesson 1",
+    "content": "Food",
+    "unit": 6,
+    "level": "A1",
+    "type": "Lesson",
+    "xp_reward": 10,
+    "steps": [
+      {
+        "type": "info",
+        "text": "Pan, leche.",
+        "translation": "Bread, milk."
+      },
+      {
+        "type": "choice",
+        "question": "Manzana?",
+        "options": [
+          "Fruta",
+          "Carne"
+        ],
+        "answer": "Fruta"
+      },
+      {
+        "type": "choice",
+        "question": "Milk?",
+        "options": [
+          "leche",
+          "vino"
+        ],
+        "answer": "leche"
+      },
+      {
+        "type": "choice",
+        "question": "Water?",
+        "options": [
+          "agua",
+          "pan"
+        ],
+        "answer": "agua"
+      },
+      {
+        "type": "choice",
+        "question": "Juice?",
+        "options": [
+          "zumo",
+          "café"
+        ],
+        "answer": "zumo"
+      }
+    ]
+  },
+  {
+    "title": "Unit 6: Lesson 2",
+    "content": "Restaurant",
+    "unit": 6,
+    "level": "A1",
+    "type": "Lesson",
+    "xp_reward": 10,
+    "steps": [
+      {
+        "type": "info",
+        "text": "Menú, cuenta.",
+        "translation": "Menu, bill."
+      },
+      {
+        "type": "choice",
+        "question": "Bill?",
+        "options": [
+          "cuenta",
+          "hola"
+        ],
+        "answer": "cuenta"
+      },
+      {
+        "type": "choice",
+        "question": "Waiter?",
+        "options": [
+          "camarero",
+          "cocinero"
+        ],
+        "answer": "camarero"
+      },
+      {
+        "type": "choice",
+        "question": "Dessert?",
+        "options": [
+          "postre",
+          "bebida"
+        ],
+        "answer": "postre"
+      },
+      {
+        "type": "choice",
+        "question": "Menu?",
+        "options": [
+          "carta",
+          "mesa"
+        ],
+        "answer": "carta"
+      }
+    ]
+  },
+  {
+    "title": "Unit 6: Practice 1",
+    "content": "Review",
+    "unit": 6,
+    "level": "A1",
+    "type": "Practice",
+    "xp_reward": 15,
+    "steps": [
+      {
+        "type": "choice",
+        "question": "Manzana?",
+        "options": [
+          "Fruta",
+          "Carne"
+        ],
+        "answer": "Fruta"
+      },
+      {
+        "type": "choice",
+        "question": "Milk?",
+        "options": [
+          "leche",
+          "vino"
+        ],
+        "answer": "leche"
+      },
+      {
+        "type": "choice",
+        "question": "Water?",
+        "options": [
+          "agua",
+          "pan"
+        ],
+        "answer": "agua"
+      },
+      {
+        "type": "choice",
+        "question": "Bill?",
+        "options": [
+          "cuenta",
+          "hola"
+        ],
+        "answer": "cuenta"
+      },
+      {
+        "type": "choice",
+        "question": "Waiter?",
+        "options": [
+          "camarero",
+          "cocinero"
+        ],
+        "answer": "camarero"
+      },
+      {
+        "type": "choice",
+        "question": "Dessert?",
+        "options": [
+          "postre",
+          "bebida"
+        ],
+        "answer": "postre"
+      }
+    ]
+  },
+  {
+    "title": "Unit 6: Lesson 3",
+    "content": "Shopping",
+    "unit": 6,
+    "level": "A1",
+    "type": "Lesson",
+    "xp_reward": 10,
+    "steps": [
+      {
+        "type": "info",
+        "text": "Precio.",
+        "translation": "Price."
+      },
+      {
+        "type": "choice",
+        "question": "Cuánto?",
+        "options": [
+          "Cuánto",
+          "Cómo"
+        ],
+        "answer": "Cuánto"
+      },
+      {
+        "type": "choice",
+        "question": "Expensive?",
+        "options": [
+          "caro",
+          "barato"
+        ],
+        "answer": "caro"
+      },
+      {
+        "type": "choice",
+        "question": "Shirt?",
+        "options": [
+          "camisa",
+          "manzana"
+        ],
+        "answer": "camisa"
+      },
+      {
+        "type": "choice",
+        "question": "Size?",
+        "options": [
+          "talla",
+          "precio"
+        ],
+        "answer": "talla"
+      }
+    ]
+  },
+  {
+    "title": "Unit 6: Lesson 4",
+    "content": "Gustar",
+    "unit": 6,
+    "level": "A1",
+    "type": "Lesson",
+    "xp_reward": 10,
+    "steps": [
+      {
+        "type": "info",
+        "text": "Me gusta.",
+        "translation": "I like."
+      },
+      {
+        "type": "choice",
+        "question": "A mí ______?",
+        "options": [
+          "me",
+          "te"
+        ],
+        "answer": "me"
+      },
+      {
+        "type": "choice",
+        "question": "Te ______ (libros)?",
+        "options": [
+          "gustan",
+          "gusta"
+        ],
+        "answer": "gustan"
+      },
+      {
+        "type": "choice",
+        "question": "No ______ gusta?",
+        "options": [
+          "me",
+          "mi"
+        ],
+        "answer": "me"
+      },
+      {
+        "type": "choice",
+        "question": "Nos ______ (viajar)?",
+        "options": [
+          "gusta",
+          "gustan"
+        ],
+        "answer": "gusta"
+      }
+    ]
+  },
+  {
+    "title": "Unit 6: Practice 2",
+    "content": "Review",
+    "unit": 6,
+    "level": "A1",
+    "type": "Practice",
+    "xp_reward": 15,
+    "steps": [
+      {
+        "type": "choice",
+        "question": "Cuánto?",
+        "options": [
+          "Cuánto",
+          "Cómo"
+        ],
+        "answer": "Cuánto"
+      },
+      {
+        "type": "choice",
+        "question": "Expensive?",
+        "options": [
+          "caro",
+          "barato"
+        ],
+        "answer": "caro"
+      },
+      {
+        "type": "choice",
+        "question": "Shirt?",
+        "options": [
+          "camisa",
+          "manzana"
+        ],
+        "answer": "camisa"
+      },
+      {
+        "type": "choice",
+        "question": "A mí ______?",
+        "options": [
+          "me",
+          "te"
+        ],
+        "answer": "me"
+      },
+      {
+        "type": "choice",
+        "question": "Te ______ (libros)?",
+        "options": [
+          "gustan",
+          "gusta"
+        ],
+        "answer": "gustan"
+      },
+      {
+        "type": "choice",
+        "question": "No ______ gusta?",
+        "options": [
+          "me",
+          "mi"
+        ],
+        "answer": "me"
+      }
+    ]
+  },
+  {
+    "title": "Unit 6: Quiz",
+    "content": "Mastery",
+    "unit": 6,
+    "level": "A1",
+    "type": "Quiz",
+    "xp_reward": 50,
+    "steps": [
+      {
+        "type": "choice",
+        "question": "Manzana?",
+        "options": [
+          "Fruta",
+          "Carne"
+        ],
+        "answer": "Fruta"
+      },
+      {
+        "type": "choice",
+        "question": "Milk?",
+        "options": [
+          "leche",
+          "vino"
+        ],
+        "answer": "leche"
+      },
+      {
+        "type": "choice",
+        "question": "Bill?",
+        "options": [
+          "cuenta",
+          "hola"
+        ],
+        "answer": "cuenta"
+      },
+      {
+        "type": "choice",
+        "question": "Waiter?",
+        "options": [
+          "camarero",
+          "cocinero"
+        ],
+        "answer": "camarero"
+      },
+      {
+        "type": "choice",
+        "question": "Cuánto?",
+        "options": [
+          "Cuánto",
+          "Cómo"
+        ],
+        "answer": "Cuánto"
+      },
+      {
+        "type": "choice",
+        "question": "Expensive?",
+        "options": [
+          "caro",
+          "barato"
+        ],
+        "answer": "caro"
+      },
+      {
+        "type": "choice",
+        "question": "A mí ______?",
+        "options": [
+          "me",
+          "te"
+        ],
+        "answer": "me"
+      },
+      {
+        "type": "choice",
+        "question": "Te ______ (libros)?",
+        "options": [
+          "gustan",
+          "gusta"
+        ],
+        "answer": "gustan"
+      }
+    ]
+  }
+]
