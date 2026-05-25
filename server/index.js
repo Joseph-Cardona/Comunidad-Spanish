@@ -13,15 +13,8 @@ const PORT = process.env.PORT || 3000;
 const SECRET = process.env.JWT_SECRET || 'supersecret';
 
 app.use(cors({
-  origin: [
-    'https://comunidad-spanish-fl93cqedz-joseph-cardonas-projects.vercel.app',
-    'https://comunidad-spanish.vercel.app',
-    'http://localhost:5173',
-    'http://localhost:3000'
-  ],
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  origin: true,
+  credentials: true
 }));
 app.use(express.json());
 
