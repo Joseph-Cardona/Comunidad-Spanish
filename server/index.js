@@ -14,7 +14,7 @@ const SECRET = process.env.JWT_SECRET || 'supersecret';
 
 app.use(cors({
   origin: [
-    'https://comunidad-spanish-h0pj7w0dw-joseph-cardonas-projects.vercel.app',
+    'https://comunidad-spanish-fl93cqedz-joseph-cardonas-projects.vercel.app',
     'https://comunidad-spanish.vercel.app',
     'http://localhost:5173',
     'http://localhost:3000'
