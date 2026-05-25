@@ -8,6 +8,6 @@ export default defineConfig({
     sourcemap: true
   },
   define: {
-    'import.meta.env.VITE_API_BASE_URL': JSON.stringify(process.env.VITE_API_BASE_URL || 'https://comunidad-spanish.onrender.com/')
+    'import.meta.env.VITE_API_BASE_URL': JSON.stringify(process.env.VITE_API_BASE_URL || 'https://comunidad-spanish.onrender.com')
   }
 });
