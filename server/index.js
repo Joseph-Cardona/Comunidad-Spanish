@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
@@ -9,7 +10,10 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const SECRET = process.env.JWT_SECRET || 'supersecret';
 
-app.use(cors());
+app.use(cors({
+  origin: ['https://comunidad-spanish.vercel.app', 'http://localhost:5173'],
+  credentials: true
+}));
 app.use(express.json());
 
 // Auth Middleware
