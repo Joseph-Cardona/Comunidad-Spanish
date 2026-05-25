@@ -1,4 +1,5 @@
 # Comunidad
+By Joseph Cardona and Luke Winterlin for the Synthesis Hacks Hackathon
 
 **"Learn Spanish with a Community of Learners"**
 
