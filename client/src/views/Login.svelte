@@ -159,7 +159,7 @@
   }
 
   @media (max-width: 480px) {
-    .auth-container { margin: 30px auto; padding: 2rem 1.5rem; }
+    .auth-container { margin: 70px auto 30px; padding: 2rem 1.5rem; }
     h1 { font-size: 1.8em; }
   }
 </style>
