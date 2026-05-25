@@ -32,6 +32,14 @@
     }
   };
 
+  const handleKeydown = (e) => {
+    if (e.key === 'Enter') handleSubmit();
+  };
+
+  const handleSecretKeydown = (e) => {
+    if (e.key === 'Enter') handleSecretSubmit();
+  };
+
   const handleSubmit = async () => {
     try {
       const endpoint = isRegistering ? '/auth/register' : '/auth/login';
@@ -56,15 +64,15 @@
     <h1>Admin Access</h1>
     <p class="prompt-text">Enter the secret password to create an admin account.</p>
     <form on:submit|preventDefault={handleSecretSubmit}>
-      <input type="password" placeholder="Secret Password" bind:value={secretInput} autofocus required />
+      <input type="password" placeholder="Secret Password" bind:value={secretInput} on:keydown={handleSecretKeydown} required />
       <button type="submit">Verify Secret</button>
     </form>
     <button class="link cancel-btn" on:click={() => showSecretPrompt = false}>&larr; Cancel</button>
   {:else}
     <h1>{role === 'client' ? '' : 'ADMIN'} {isRegistering ? 'Join' : 'Welcome'}</h1>
     <form on:submit|preventDefault={handleSubmit}>
-      <input type="text" placeholder="Username" bind:value={username} required />
-      <input type="password" placeholder="Password" bind:value={password} required />
+      <input type="text" placeholder="Username" bind:value={username} on:keydown={handleKeydown} required />
+      <input type="password" placeholder="Password" bind:value={password} on:keydown={handleKeydown} required />
       <button type="submit">{isRegistering ? 'Create Account' : 'Sign In'}</button>
     </form>
   {/if}
