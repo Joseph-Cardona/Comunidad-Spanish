@@ -36,7 +36,10 @@
     {#if !loginRole}
       <div class="landing">
         <div class="landing-content">
-          <img src="/src/assets/logo.svg" alt="Comunidad Logo" class="hero-img" />
+          <script>
+            import logoUrl from './assets/logo.svg';
+          </script>
+          <img src={logoUrl} />
           <h1>Comunidad</h1>
           <p>Learn Spanish with a Community of Learners</p>
           <div class="role-selector">
