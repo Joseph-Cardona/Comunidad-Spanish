@@ -361,6 +361,7 @@
     top: 16px;
     left: 16px;
     z-index: 100;
+    padding-bottom: 8px;
   }
   .link {
     background: none;
