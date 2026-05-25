@@ -1,16 +1,13 @@
 # Comunidad
-By Joseph Cardona and Luke Winterlin for the Synthesis Hacks Hackathon
-
-**"Learn Spanish with a Community of Learners"**
+### "Learn Spanish with a Community of Learners"
+**By Joseph Cardona and Luke Winterlin for the Synthesis Hacks Hackathon**
 
 ## Project Overview
-
 Comunidad is a modern, collaborative language-learning platform designed to help users master Spanish while building connections with their online community. It combines a structured learning path with social features like a group chat and a collaborative "Board" for sharing notes and tips.
 
 The application is built with a sleek, rounded aesthetic inspired by modern educational tools, featuring custom branding, themed scrollbars, and a responsive interface.
 
 ## Key Features
-
 - **Learning Path:** Progress through units and levels with interactive lessons, practice sessions, and quizzes.
 - **The Board:** A collaborative space where learners can post "pegs" (notes) with titles and content, and comment on each other's posts to share knowledge.
 - **Chat Feed:** A global group chat for learners to share their daily progress and interact.
@@ -33,15 +30,15 @@ The application is built with a sleek, rounded aesthetic inspired by modern educ
 - **Middleware:** [CORS](https://www.npmjs.com/package/cors) and [dotenv](https://www.npmjs.com/package/dotenv).
 
 ### Database & Hosting
-- **Database:** [better-sqlite3](https://github.com/WiseLibs/better-sqlite3) - Used during initial local development.
+- **Database:** [Neon](https://neon.tech/) - Serverless PostgreSQL for persistent, scalable cloud storage.
+- **Backend Hosting:** [Render](https://render.com/) - For deploying and running the Node.js/Express API server.
+- **Frontend Hosting:** [Vercel](https://vercel.com/) - For deploying the Svelte frontend with global CDN delivery.
 
 ## Credits & Tools
-
 This project was built using the following tools and resources:
-
 - **Styling:** Custom Vanilla CSS for a lightweight and highly tailored design.
 - **Fonts:** "Din Round" aesthetic for an approachable, educational feel.
 - **Development Environment:** [Gemini CLI](https://github.com/google-gemini/gemini-cli) - An interactive AI agent specializing in software engineering.
-- **Database Management:** [SQLite](https://sqlite.org/)
+- **AI Assistant:** [Claude](https://claude.ai) - AI assistant used throughout development and deployment.
 
 ---
