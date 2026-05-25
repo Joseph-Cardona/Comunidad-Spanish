@@ -5,14 +5,23 @@ const cors = require('cors');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const db = require('./db');
+const dotenv = require('dotenv');
+const { query, get, run } = require('./db');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 const SECRET = process.env.JWT_SECRET || 'supersecret';
 
 app.use(cors({
-  origin: ['https://comunidad-spanish-h0pj7w0dw-joseph-cardonas-projects.vercel.app/', 'http://localhost:5173'],
-  credentials: true
+  origin: [
+    'https://comunidad-spanish-h0pj7w0dw-joseph-cardonas-projects.vercel.app',
+    'https://comunidad-spanish.vercel.app',
+    'http://localhost:5173',
+    'http://localhost:3000'
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 app.use(express.json());
 
