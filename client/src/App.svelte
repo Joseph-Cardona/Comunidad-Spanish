@@ -6,6 +6,7 @@
   import Chat from './views/Chat.svelte';
   import Leaderboard from './views/Leaderboard.svelte';
   import Board from './views/Board.svelte';
+  import logoUrl from './assets/logo.svg';
 
   let currentView = 'path';
   let loginRole = null;
@@ -36,10 +37,7 @@
     {#if !loginRole}
       <div class="landing">
         <div class="landing-content">
-          <script>
-            import logoUrl from './assets/logo.svg';
-          </script>
-          <img src={logoUrl} />
+          <img src={logoUrl} alt="Comunidad Logo" class="hero-img" />
           <h1>Comunidad</h1>
           <p>Learn Spanish with a Community of Learners</p>
           <div class="role-selector">
@@ -58,7 +56,7 @@
     <nav>
       <div class="nav-content">
         <div class="nav-left">
-          <img src="/src/assets/logo.svg" alt="Logo" class="nav-logo" />
+          <img src={logoUrl} alt="Logo" class="nav-logo" />
           <!-- Desktop links -->
           <div class="links desktop-links">
             <button class:active={currentView === 'path'} on:click={() => navigate('path')}>LEARN</button>
