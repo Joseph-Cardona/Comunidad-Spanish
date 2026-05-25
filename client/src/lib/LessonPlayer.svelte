@@ -14,7 +14,7 @@
     return str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   };
 
-  let steps = JSON.parse(lesson.steps || '[]').map(s => ({ 
+  let steps = (typeof lesson.steps === 'string' ? JSON.parse(lesson.steps || '[]') : (lesson.steps || [])).map(s => ({
     ...s, 
     wrongAnswers: [],
     // Randomize options if it's a choice step
