@@ -1,5 +1,5 @@
 <script>
-  import { user, token } from '../lib/stores';
+  import { user, token, API_BASE_URL } from '../lib/stores';
   import axios from 'axios';
 
   export let role = 'client';
@@ -35,7 +35,7 @@
   const handleSubmit = async () => {
     try {
       const endpoint = isRegistering ? '/auth/register' : '/auth/login';
-      const res = await axios.post(`http://localhost:3000/api${endpoint}`, { username, password, role });
+      const res = await axios.post(`${API_BASE_URL}${endpoint}`, { username, password, role });
       $token = res.data.token;
       $user = { 
         id: res.data.id,

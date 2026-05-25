@@ -1,11 +1,12 @@
 <script>
   import { onMount } from 'svelte';
+  import { API_BASE_URL } from '../lib/stores';
   import axios from 'axios';
 
   let leaderboard = [];
 
   const fetchLeaderboard = async () => {
-    const res = await axios.get('http://localhost:3000/api/leaderboard');
+    const res = await axios.get(`${API_BASE_URL}/leaderboard`);
     leaderboard = res.data;
   };
 

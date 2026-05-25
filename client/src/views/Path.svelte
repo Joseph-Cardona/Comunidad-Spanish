@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte';
-  import { token, user } from '../lib/stores';
+  import { token, user, API_BASE_URL } from '../lib/stores';
   import axios from 'axios';
   import LessonModal from '../lib/LessonModal.svelte';
   import LessonPlayer from '../lib/LessonPlayer.svelte';
@@ -12,7 +12,7 @@
 
   const fetchLessons = async () => {
     try {
-      const res = await axios.get('http://localhost:3000/api/lessons', {
+      const res = await axios.get(`${API_BASE_URL}/lessons`, {
         headers: { Authorization: `Bearer ${$token}` }
       });
       lessons = res.data;
@@ -24,7 +24,7 @@
   const completeLesson = async () => {
     if (!playingLesson) return;
     try {
-      const res = await axios.post(`http://localhost:3000/api/lessons/${playingLesson.id}/complete`, {}, {
+      const res = await axios.post(`${API_BASE_URL}/lessons/${playingLesson.id}/complete`, {}, {
         headers: { Authorization: `Bearer ${$token}` }
       });
       if ($user) $user.total_xp += res.data.xp_gained;

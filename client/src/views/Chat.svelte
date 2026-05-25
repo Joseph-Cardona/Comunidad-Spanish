@@ -1,20 +1,20 @@
 <script>
   import { onMount } from 'svelte';
-  import { token } from '../lib/stores';
+  import { token, API_BASE_URL } from '../lib/stores';
   import axios from 'axios';
 
   let feed = [];
   let newPostContent = '';
 
   const fetchFeed = async () => {
-    const res = await axios.get('http://localhost:3000/api/feed');
+    const res = await axios.get(`${API_BASE_URL}/feed`);
     feed = res.data;
   };
 
   const createPost = async () => {
     if (!newPostContent.trim()) return;
     try {
-      await axios.post('http://localhost:3000/api/posts', 
+      await axios.post(`${API_BASE_URL}/posts`, 
         { content: newPostContent },
         { headers: { Authorization: `Bearer ${$token}` } }
       );
@@ -26,7 +26,7 @@
   };
 
   onMount(fetchFeed);
-</script>
+  </script>
 
 <div class="view-container">
   <h1>Chat Feed</h1>

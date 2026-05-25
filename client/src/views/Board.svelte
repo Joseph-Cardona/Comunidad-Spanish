@@ -1,7 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import axios from 'axios';
-  import { token } from '../lib/stores';
+  import { token, API_BASE_URL } from '../lib/stores';
 
   export let currentUser; // Passed from App.svelte
 
@@ -20,7 +20,7 @@
 
   async function fetchNodes() {
     try {
-      const res = await axios.get('http://localhost:3000/api/board/nodes');
+      const res = await axios.get(`${API_BASE_URL}/board/nodes`);
       // The server returns 'content', but the component uses 'text'
       nodes = res.data.map(n => ({
         ...n,
@@ -87,7 +87,7 @@
   async function handleNodeMouseUp() {
     if (dragNode) {
       try {
-        await axios.put(`http://localhost:3000/api/board/nodes/${dragNode.id}`, 
+        await axios.put(`${API_BASE_URL}/board/nodes/${dragNode.id}`, 
           { x: dragNode.x, y: dragNode.y, title: dragNode.title, content: dragNode.text },
           { headers: { Authorization: `Bearer ${$token}` } }
         );
@@ -156,7 +156,7 @@
         return;
       }
       try {
-        await axios.delete(`http://localhost:3000/api/board/nodes/${id}`, {
+        await axios.delete(`${API_BASE_URL}/board/nodes/${id}`, {
           headers: { Authorization: `Bearer ${$token}` }
         });
         nodes = nodes.filter(n => n.id !== id);
@@ -173,7 +173,7 @@
     const text = e.target.value;
     if (e.key === 'Enter' && text && currentUser) {
       try {
-        const res = await axios.post(`http://localhost:3000/api/board/nodes/${node.id}/comments`, 
+        const res = await axios.post(`${API_BASE_URL}/board/nodes/${node.id}/comments`, 
           { content: text },
           { headers: { Authorization: `Bearer ${$token}` } }
         );
@@ -197,7 +197,7 @@
     const commentToDelete = node.comments.find(c => c.id === commentId);
     if (commentToDelete && (commentToDelete.ownerId === currentUser.id || isAdmin)) {
       try {
-        await axios.delete(`http://localhost:3000/api/board/comments/${commentId}`, {
+        await axios.delete(`${API_BASE_URL}/board/comments/${commentId}`, {
           headers: { Authorization: `Bearer ${$token}` }
         });
         node.comments = node.comments.filter(c => c.id !== commentId);
@@ -219,7 +219,7 @@
 
     if (node.isNew) {
       try {
-        const res = await axios.post('http://localhost:3000/api/board/nodes', 
+        const res = await axios.post(`${API_BASE_URL}/board/nodes`, 
           { x: node.x, y: node.y, title: node.title, content: node.text },
           { headers: { Authorization: `Bearer ${$token}` } }
         );
@@ -233,7 +233,7 @@
       }
     } else {
       try {
-        await axios.put(`http://localhost:3000/api/board/nodes/${node.id}`, 
+        await axios.put(`${API_BASE_URL}/board/nodes/${node.id}`, 
           { x: node.x, y: node.y, title: node.title, content: node.text },
           { headers: { Authorization: `Bearer ${$token}` } }
         );

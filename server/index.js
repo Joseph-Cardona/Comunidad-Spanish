@@ -32,8 +32,8 @@ app.post('/api/auth/register', async (req, res) => {
   const { username, password, role = 'client' } = req.body;
   const hash = bcrypt.hashSync(password, 10);
   try {
-    const result = await db.prepare('INSERT INTO users (username, password_hash, role) VALUES (?, ?, ?) RETURNING id').run(username, hash, role);
-    const userId = result.rows[0].id;
+    const info = await db.prepare('INSERT INTO users (username, password_hash, role) VALUES (?, ?, ?)').run(username, hash, role);
+    const userId = info.lastInsertRowid;
     const token = jwt.sign({ id: userId, username, role }, SECRET);
     res.json({ token, username, role, id: userId });
   } catch (e) {
@@ -160,10 +160,10 @@ app.post('/api/board/nodes', authenticate, async (req, res) => {
   if (!title || !content) {
     return res.status(400).json({ error: 'Title and content are required' });
   }
-  const result = await db.prepare('INSERT INTO board_nodes (user_id, x, y, title, content) VALUES (?, ?, ?, ?, ?) RETURNING id').run(
+  const info = await db.prepare('INSERT INTO board_nodes (user_id, x, y, title, content) VALUES (?, ?, ?, ?, ?)').run(
     req.user.id, x, y, title, content
   );
-  const nodeId = result.rows[0].id;
+  const nodeId = info.lastInsertRowid;
   res.json({ id: nodeId, ownerId: req.user.id, ownerUsername: req.user.username });
 });
 
@@ -201,10 +201,10 @@ app.delete('/api/board/nodes/:id', authenticate, async (req, res) => {
 
 app.post('/api/board/nodes/:id/comments', authenticate, async (req, res) => {
   const { content } = req.body;
-  const result = await db.prepare('INSERT INTO board_comments (node_id, user_id, content) VALUES (?, ?, ?) RETURNING id').run(
+  const info = await db.prepare('INSERT INTO board_comments (node_id, user_id, content) VALUES (?, ?, ?)').run(
     req.params.id, req.user.id, content
   );
-  const commentId = result.rows[0].id;
+  const commentId = info.lastInsertRowid;
   res.json({ id: commentId, ownerId: req.user.id, ownerUsername: req.user.username });
 });
 

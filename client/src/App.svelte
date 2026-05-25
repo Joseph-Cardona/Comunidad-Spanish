@@ -35,7 +35,7 @@
         <div class="landing-content">
           <img src="/src/assets/logo.svg" alt="Comunidad Logo" class="hero-img" />
           <h1>Comunidad</h1>
-          <p>Bond with your Hispanic Neighbors</p>
+          <p>Learn Spanish with a Community of Learners</p>
           <div class="role-selector">
             <button class="learner-btn" on:click={() => loginRole = 'client'}>GET STARTED</button>
             <button class="admin-btn" on:click={() => loginRole = 'admin'}>ADMIN PORTAL</button>
