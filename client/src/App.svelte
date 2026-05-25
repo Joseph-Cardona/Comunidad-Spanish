@@ -8,7 +8,8 @@
   import Board from './views/Board.svelte';
 
   let currentView = 'path';
-  let loginRole = null; // null, 'client', or 'admin'
+  let loginRole = null;
+  let mobileMenuOpen = false;
 
   const logout = () => {
     $user = null;
@@ -16,13 +17,15 @@
     loginRole = null;
   };
 
-  // Global error handling for auth
+  const navigate = (view) => {
+    currentView = view;
+    mobileMenuOpen = false;
+  };
+
   axios.interceptors.response.use(
     response => response,
     error => {
-      if (error.response?.status === 401) {
-        logout();
-      }
+      if (error.response?.status === 401) logout();
       return Promise.reject(error);
     }
   );
@@ -53,23 +56,68 @@
       <div class="nav-content">
         <div class="nav-left">
           <img src="/src/assets/logo.svg" alt="Logo" class="nav-logo" />
-          <div class="links">
-            <button class:active={currentView === 'path'} on:click={() => currentView = 'path'}>LEARN</button>
-            <button class:active={currentView === 'board'} on:click={() => currentView = 'board'}>BOARD</button>
-            <button class:active={currentView === 'chat'} on:click={() => currentView = 'chat'}>CHAT</button>
-            <button class:active={currentView === 'leaderboard'} on:click={() => currentView = 'leaderboard'}>LEADERBOARD</button>
+          <!-- Desktop links -->
+          <div class="links desktop-links">
+            <button class:active={currentView === 'path'} on:click={() => navigate('path')}>LEARN</button>
+            <button class:active={currentView === 'board'} on:click={() => navigate('board')}>BOARD</button>
+            <button class:active={currentView === 'chat'} on:click={() => navigate('chat')}>CHAT</button>
+            <button class:active={currentView === 'leaderboard'} on:click={() => navigate('leaderboard')}>LEADERBOARD</button>
           </div>
         </div>
-        <div class="user-info">
-          <span class="role-tag" class:admin={$user.role === 'admin'}>
-            {$user.role === 'client' ? 'learner' : $user.role}
-          </span>
-          <span>{$user.username}</span>
-          <span class="xp">{$user.total_xp} XP</span>
-          <button class="logout" on:click={logout}>Logout</button>
+        <div class="nav-right">
+          <div class="user-info">
+            <span class="role-tag" class:admin={$user.role === 'admin'}>
+              {$user.role === 'client' ? 'learner' : $user.role}
+            </span>
+            <span class="username-display">{$user.username}</span>
+            <span class="xp">{$user.total_xp} XP</span>
+            <button class="logout" on:click={logout}>Logout</button>
+          </div>
+          <!-- Hamburger -->
+          <button class="hamburger" on:click={() => mobileMenuOpen = !mobileMenuOpen} aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
         </div>
       </div>
+
+      <!-- Mobile menu -->
+      {#if mobileMenuOpen}
+        <div class="mobile-menu">
+          <button class:active={currentView === 'path'} on:click={() => navigate('path')}>LEARN</button>
+          <button class:active={currentView === 'board'} on:click={() => navigate('board')}>BOARD</button>
+          <button class:active={currentView === 'chat'} on:click={() => navigate('chat')}>CHAT</button>
+          <button class:active={currentView === 'leaderboard'} on:click={() => navigate('leaderboard')}>LEADERBOARD</button>
+          <div class="mobile-user-info">
+            <span class="role-tag" class:admin={$user.role === 'admin'}>
+              {$user.role === 'client' ? 'learner' : $user.role}
+            </span>
+            <span>{$user.username}</span>
+            <span class="xp">{$user.total_xp} XP</span>
+            <button class="logout" on:click={logout}>Logout</button>
+          </div>
+        </div>
+      {/if}
     </nav>
+
+    <!-- Mobile bottom tabs -->
+    <div class="bottom-tabs">
+      <button class:active={currentView === 'path'} on:click={() => navigate('path')}>
+        <span class="tab-icon">📚</span>
+        <span>Learn</span>
+      </button>
+      <button class:active={currentView === 'board'} on:click={() => navigate('board')}>
+        <span class="tab-icon">📌</span>
+        <span>Board</span>
+      </button>
+      <button class:active={currentView === 'chat'} on:click={() => navigate('chat')}>
+        <span class="tab-icon">💬</span>
+        <span>Chat</span>
+      </button>
+      <button class:active={currentView === 'leaderboard'} on:click={() => navigate('leaderboard')}>
+        <span class="tab-icon">🏆</span>
+        <span>Rank</span>
+      </button>
+    </div>
 
     <div class="main-content">
       {#if currentView === 'path'}
@@ -96,29 +144,17 @@
     flex-direction: column;
   }
   
-  /* Global Scrollbar Theme */
-  :global(::-webkit-scrollbar) {
-    width: 10px;
-  }
-  :global(::-webkit-scrollbar-track) {
-    background: #f1f9ff;
-  }
-  :global(::-webkit-scrollbar-thumb) {
-    background: #1cb0f6;
-    border-radius: 10px;
-    transition: background 0.2s;
-  }
-  :global(::-webkit-scrollbar-thumb:hover) {
-    background: #1899d6;
-  }
-  :global(::-webkit-scrollbar-thumb:active) {
-    background: #1482b5;
-  }
+  :global(::-webkit-scrollbar) { width: 10px; }
+  :global(::-webkit-scrollbar-track) { background: #f1f9ff; }
+  :global(::-webkit-scrollbar-thumb) { background: #1cb0f6; border-radius: 10px; }
+  :global(::-webkit-scrollbar-thumb:hover) { background: #1899d6; }
+  :global(::-webkit-scrollbar-thumb:active) { background: #1482b5; }
 
   main {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    overflow: hidden;
   }
   nav {
     border-bottom: 2px solid #e5e5e5;
@@ -140,10 +176,12 @@
     align-items: center;
     gap: 20px;
   }
-  .nav-logo {
-    height: 35px;
-    width: auto;
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
+  .nav-logo { height: 35px; width: auto; }
   .links button {
     background: none;
     border: none;
@@ -154,9 +192,8 @@
     letter-spacing: 0.8px;
     text-transform: uppercase;
   }
-  .links button.active {
-    color: #1cb0f6;
-  }
+  .links button.active { color: #1cb0f6; }
+
   .main-content {
     flex-grow: 1;
     overflow-y: auto;
@@ -166,7 +203,7 @@
   .user-info {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 12px;
     font-weight: bold;
   }
   .xp { color: #ffc800; }
@@ -178,10 +215,7 @@
     color: #777;
     text-transform: uppercase;
   }
-  .role-tag.admin {
-    background: #1cb0f6;
-    color: white;
-  }
+  .role-tag.admin { background: #1cb0f6; color: white; }
   .logout {
     background: none;
     border: 1px solid #e5e5e5;
@@ -191,28 +225,104 @@
     font-weight: bold;
     color: #afafaf;
   }
-  .logout:hover {
-    background: #f7f7f7;
-    color: #4b4b4b;
+  .logout:hover { background: #f7f7f7; color: #4b4b4b; }
+
+  /* Hamburger */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+  }
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #4b4b4b;
+    border-radius: 2px;
   }
 
-  /* Landing Styles */
+  /* Mobile menu dropdown */
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px 15px;
+    border-top: 1px solid #f0f0f0;
+    gap: 5px;
+  }
+  .mobile-menu button {
+    background: none;
+    border: none;
+    padding: 12px 10px;
+    text-align: left;
+    font-weight: bold;
+    color: #afafaf;
+    cursor: pointer;
+    letter-spacing: 0.8px;
+    font-size: 0.95em;
+    border-radius: 8px;
+  }
+  .mobile-menu button.active { color: #1cb0f6; background: #f0f9ff; }
+  .mobile-user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 10px;
+    margin-top: 5px;
+    border-top: 1px solid #f0f0f0;
+    flex-wrap: wrap;
+  }
+
+  /* Bottom tabs (mobile only) */
+  .bottom-tabs {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    border-top: 2px solid #e5e5e5;
+    z-index: 200;
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+  .bottom-tabs button {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    padding: 10px 5px;
+    background: none;
+    border: none;
+    color: #afafaf;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: pointer;
+    letter-spacing: 0.3px;
+  }
+  .bottom-tabs button.active { color: #1cb0f6; }
+  .tab-icon { font-size: 20px; line-height: 1; }
+
+  /* Landing */
   .landing {
     flex-grow: 1;
     display: flex;
     align-items: center;
     justify-content: center;
     background: white;
+    padding: 20px;
   }
   .landing-content {
     text-align: center;
     max-width: 600px;
     padding: 20px;
+    width: 100%;
   }
-  .hero-img {
-    width: 200px;
-    margin-bottom: 15px;
-  }
+  .hero-img { width: 200px; margin-bottom: 15px; }
   .landing h1 {
     font-size: 3.5em;
     color: #58cc02;
@@ -242,17 +352,9 @@
     color: white;
     transition: transform 0.1s, filter 0.2s;
   }
-  .role-selector button:active {
-    transform: translateY(4px);
-  }
-  .learner-btn {
-    background: #58cc02;
-    border-bottom: 5px solid #46a302;
-  }
-  .admin-btn {
-    background: #1cb0f6;
-    border-bottom: 5px solid #1482b5;
-  }
+  .role-selector button:active { transform: translateY(4px); }
+  .learner-btn { background: #58cc02; border-bottom: 5px solid #46a302; }
+  .admin-btn { background: #1cb0f6; border-bottom: 5px solid #1482b5; }
   .back-nav {
     max-width: 400px;
     margin: 40px auto -80px;
@@ -266,7 +368,29 @@
     font-weight: bold;
     font-size: 1.1em;
   }
-  .link:hover {
-    color: #1cb0f6;
+  .link:hover { color: #1cb0f6; }
+
+  /* ── Mobile breakpoint ── */
+  @media (max-width: 640px) {
+    .desktop-links { display: none !important; }
+    .hamburger { display: none; } /* Using bottom tabs instead */
+    .user-info { gap: 8px; }
+    .username-display { display: none; }
+    .role-tag { display: none; }
+
+    .bottom-tabs { display: flex; }
+    /* Push main content above fixed bottom tabs */
+    .main-content { padding-bottom: calc(70px + env(safe-area-inset-bottom, 0)); }
+
+    .landing h1 { font-size: 2.5em; }
+    .landing p { font-size: 1.2em; margin-bottom: 30px; }
+    .hero-img { width: 150px; }
+    .back-nav { margin: 20px auto -60px; }
+  }
+
+  /* Tablet */
+  @media (max-width: 768px) and (min-width: 641px) {
+    .links button { padding: 8px 10px; font-size: 0.85em; }
+    .user-info { gap: 8px; }
   }
 </style>

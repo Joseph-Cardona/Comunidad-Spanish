@@ -55,7 +55,6 @@
   {#if showSecretPrompt}
     <h1>Admin Access</h1>
     <p class="prompt-text">Enter the secret password to create an admin account.</p>
-    
     <form on:submit|preventDefault={handleSecretSubmit}>
       <input type="password" placeholder="Secret Password" bind:value={secretInput} autofocus required />
       <button type="submit">Verify Secret</button>
@@ -63,7 +62,6 @@
     <button class="link cancel-btn" on:click={() => showSecretPrompt = false}>&larr; Cancel</button>
   {:else}
     <h1>{role === 'client' ? '' : 'ADMIN'} {isRegistering ? 'Join' : 'Welcome'}</h1>
-    
     <form on:submit|preventDefault={handleSubmit}>
       <input type="text" placeholder="Username" bind:value={username} required />
       <input type="password" placeholder="Password" bind:value={password} required />
@@ -88,13 +86,15 @@
 <style>
   .auth-container {
     max-width: 400px;
-    margin: 100px auto;
+    width: calc(100% - 40px);
+    margin: 60px auto;
     padding: 2.5rem 2rem;
     background: white;
     border: 2px solid #e5e5e5;
     border-radius: 20px;
     text-align: center;
     box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    box-sizing: border-box;
   }
   h1 {
     font-size: 2.2em;
@@ -103,27 +103,15 @@
     line-height: 1.1;
     font-weight: 800;
   }
-  .prompt-text {
-    color: #777;
-    margin-bottom: 20px;
-  }
-  .cancel-btn {
-    margin-top: 20px;
-  }
-  .auth-container.role-admin {
-    border-color: #1cb0f6;
-  }
-  .role-admin h1 {
-    color: #1cb0f6;
-  }
-  .role-admin button:not(.link) {
-    background: #1cb0f6;
-    border-bottom: 4px solid #1482b5;
-  }
+  .prompt-text { color: #777; margin-bottom: 20px; }
+  .cancel-btn { margin-top: 20px; }
+  .auth-container.role-admin { border-color: #1cb0f6; }
+  .role-admin h1 { color: #1cb0f6; }
+  .role-admin button:not(.link) { background: #1cb0f6; border-bottom: 4px solid #1482b5; }
   input {
     width: 100%;
     padding: 14px;
-    margin: 12px 0;
+    margin: 10px 0;
     border: 2px solid #e5e5e5;
     border-radius: 12px;
     box-sizing: border-box;
@@ -131,10 +119,7 @@
     font-family: inherit;
     transition: border-color 0.2s;
   }
-  input:focus {
-    outline: none;
-    border-color: #1cb0f6;
-  }
+  input:focus { outline: none; border-color: #1cb0f6; }
   button {
     width: 100%;
     padding: 14px;
@@ -150,10 +135,7 @@
     text-transform: uppercase;
     letter-spacing: 0.8px;
   }
-  button:active {
-    border-bottom: 0;
-    margin-top: 14px;
-  }
+  button:active { border-bottom: 0; margin-top: 14px; }
   .link {
     background: none;
     border: none;
@@ -166,9 +148,7 @@
     text-transform: none;
     letter-spacing: normal;
   }
-  .link:hover {
-    text-decoration: underline;
-  }
+  .link:hover { text-decoration: underline; }
   .error { 
     color: #ff4b4b; 
     margin-top: 15px; 
@@ -176,5 +156,10 @@
     background: #ff4b4b11;
     padding: 10px;
     border-radius: 8px;
+  }
+
+  @media (max-width: 480px) {
+    .auth-container { margin: 30px auto; padding: 2rem 1.5rem; }
+    h1 { font-size: 1.8em; }
   }
 </style>

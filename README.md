@@ -1,10 +1,10 @@
 # Comunidad
 
-**"Bond with your Hispanic Neighbors"**
+**"Learn Spanish with a Community of Learners"**
 
 ## Project Overview
 
-Comunidad is a modern, collaborative language-learning platform designed to help users master Spanish while building connections with their local community. It combines a structured learning path with social features like a group chat and a collaborative "Board" for sharing notes and tips.
+Comunidad is a modern, collaborative language-learning platform designed to help users master Spanish while building connections with their online community. It combines a structured learning path with social features like a group chat and a collaborative "Board" for sharing notes and tips.
 
 The application is built with a sleek, rounded aesthetic inspired by modern educational tools, featuring custom branding, themed scrollbars, and a responsive interface.
 

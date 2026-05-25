@@ -61,7 +61,6 @@
 
   $: sortedUnits = Object.entries(groupedLessons).sort((a, b) => Number(a[0]) - Number(b[0]));
 
-  // Calculate global index for each lesson to ensure continuous numbering
   $: lessonsWithGlobalIndex = (() => {
     let count = 0;
     return sortedUnits.map(([unit, unitLessons]) => {
@@ -134,7 +133,7 @@
     flex-direction: column;
     align-items: center;
     background-color: #fff;
-    min-height: 100vh;
+    min-height: 100%;
     width: 100%;
     box-sizing: border-box;
   }
@@ -143,6 +142,7 @@
     font-size: 2.5em;
     margin-bottom: 40px;
     font-weight: 700;
+    text-align: center;
   }
   .unit-section {
     width: 100%;
@@ -187,9 +187,7 @@
     transition: all 0.2s;
     box-shadow: 0 4px 0 rgba(0,0,0,0.1);
   }
-  .checkmark {
-    font-size: 36px;
-  }
+  .checkmark { font-size: 36px; }
   .tooltip {
     position: absolute;
     left: 90px;
@@ -206,21 +204,34 @@
     opacity: 0;
     transition: opacity 0.2s;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    z-index: 20;
   }
-  .lesson-node:hover .tooltip {
-    opacity: 1;
-  }
-  .circle:hover {
-    transform: scale(1.1) translateY(-5px);
-  }
-  .circle:active {
-    transform: scale(0.95);
-    border-bottom-width: 0;
-    margin-top: 6px;
-  }
-  .loading {
-    font-size: 20px;
-    color: #afafaf;
-    margin-top: 100px;
+  .lesson-node:hover .tooltip { opacity: 1; }
+  .circle:hover { transform: scale(1.1) translateY(-5px); }
+  .circle:active { transform: scale(0.95); border-bottom-width: 0; margin-top: 6px; }
+  .loading { font-size: 20px; color: #afafaf; margin-top: 100px; }
+
+  @media (max-width: 640px) {
+    h1 { font-size: 1.8em; margin-bottom: 25px; }
+    .path-container { padding: 20px 16px; }
+    .unit-section { margin-bottom: 50px; }
+    .unit-header { padding: 18px 16px; }
+    .unit-header h2 { font-size: 22px; }
+    .lessons { gap: 35px; }
+    .circle { width: 60px; height: 60px; font-size: 22px; }
+    .checkmark { font-size: 28px; }
+    /* On mobile, tooltip appears below the circle instead of to the right */
+    .tooltip {
+      left: 50%;
+      top: 80px;
+      transform: translateX(-50%);
+      white-space: normal;
+      text-align: center;
+      max-width: 140px;
+    }
+    /* Keep the offset wiggle effect but reduce it on small screens */
+    .lesson-node {
+      margin-left: 0 !important;
+    }
   }
 </style>

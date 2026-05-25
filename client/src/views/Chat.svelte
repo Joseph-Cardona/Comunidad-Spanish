@@ -25,15 +25,28 @@
     }
   };
 
+  const handleKeydown = (e) => {
+    if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
+      createPost();
+    }
+  };
+
   onMount(fetchFeed);
-  </script>
+</script>
 
 <div class="view-container">
   <h1>Chat Feed</h1>
 
   <div class="post-creator">
-    <textarea bind:value={newPostContent} placeholder="Send a message to the group..."></textarea>
-    <button on:click={createPost}>Send</button>
+    <textarea 
+      bind:value={newPostContent} 
+      placeholder="Send a message to the group..."
+      on:keydown={handleKeydown}
+    ></textarea>
+    <div class="post-actions">
+      <small class="hint">Ctrl+Enter to send</small>
+      <button on:click={createPost}>Send</button>
+    </div>
   </div>
 
   <div class="feed-list">
@@ -80,23 +93,29 @@
     padding: 12px;
     resize: none;
     font-family: inherit;
+    font-size: 1em;
     box-sizing: border-box;
+    min-height: 80px;
   }
+  textarea:focus { outline: none; border-color: #1cb0f6; }
+  .post-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .hint { color: #ccc; font-size: 12px; }
   .post-creator button {
-    align-self: flex-end;
-    padding: 8px 20px;
+    padding: 10px 24px;
     background: #1cb0f6;
     color: white;
     border: none;
     border-bottom: 4px solid #1899d6;
     border-radius: 12px;
     font-weight: bold;
+    font-size: 1em;
     cursor: pointer;
   }
-  .post-creator button:active {
-    border-bottom: 0;
-    margin-top: 4px;
-  }
+  .post-creator button:active { border-bottom: 0; margin-top: 4px; }
 
   .feed-list { display: flex; flex-direction: column; gap: 15px; }
   .feed-item {
@@ -106,15 +125,14 @@
     background: white;
     border: 2px solid #e5e5e5;
     border-radius: 16px;
-    transition: transform 0.1s;
   }
   .feed-item.activity {
     border-color: #58cc0233;
     background: #58cc0205;
   }
   .avatar {
-    width: 50px;
-    height: 50px;
+    width: 46px;
+    height: 46px;
     background: #1cb0f6;
     color: white;
     border-radius: 50%;
@@ -122,10 +140,10 @@
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 18px;
     flex-shrink: 0;
   }
-  .header { display: flex; align-items: center; gap: 10px; }
+  .header { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
   .badge {
     background: #58cc02;
     color: white;
@@ -134,6 +152,15 @@
     border-radius: 6px;
     text-transform: uppercase;
   }
-  .content p { margin: 5px 0; color: #4b4b4b; line-height: 1.4; }
+  .content { flex: 1; min-width: 0; }
+  .content p { margin: 5px 0; color: #4b4b4b; line-height: 1.4; word-break: break-word; }
   small { color: #afafaf; font-size: 11px; }
+
+  @media (max-width: 640px) {
+    .view-container { padding: 16px; }
+    h1 { font-size: 1.8em; margin-bottom: 16px; }
+    .avatar { width: 38px; height: 38px; font-size: 15px; }
+    .feed-item { padding: 12px; gap: 10px; }
+    .hint { display: none; }
+  }
 </style>
