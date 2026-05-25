@@ -357,9 +357,10 @@
   .learner-btn { background: #58cc02; border-bottom: 5px solid #46a302; }
   .admin-btn { background: #1cb0f6; border-bottom: 5px solid #1482b5; }
   .back-nav {
-    max-width: 400px;
-    margin: 40px auto -80px;
-    padding: 0 20px;
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    z-index: 100;
   }
   .link {
     background: none;
@@ -367,7 +368,7 @@
     color: #afafaf;
     cursor: pointer;
     font-weight: bold;
-    font-size: 1.1em;
+    font-size: 0.8em;
   }
   .link:hover { color: #1cb0f6; }
 
@@ -386,7 +387,7 @@
     .landing h1 { font-size: 2.5em; }
     .landing p { font-size: 1.2em; margin-bottom: 30px; }
     .hero-img { width: 150px; }
-    .back-nav { margin: 20px auto -60px; }
+    .back-nav { top: 12px; left: 12px; }
   }
 
   /* Tablet */
