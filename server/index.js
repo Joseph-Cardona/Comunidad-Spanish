@@ -36,36 +36,64 @@ const authenticate = async (req, res, next) => {
 // Auth Routes
 app.post('/api/auth/register', async (req, res) => {
   const { username, password, role = 'client' } = req.body;
+  
+  if (!username || !password) {
+    return res.status(400).json({ error: 'Username and password are required' });
+  }
+
   const hash = bcrypt.hashSync(password, 10);
+
   try {
-    const info = await db.prepare('INSERT INTO users (username, password_hash, role) VALUES (?, ?, ?)').run(username, hash, role);
-    const userId = info.lastInsertRowid;
+    // PostgreSQL version
+    const result = await db.query(
+      'INSERT INTO users (username, password_hash, role) VALUES ($1, $2, $3) RETURNING id',
+      [username, hash, role]
+    );
+
+    const userId = result.rows[0].id;
     const token = jwt.sign({ id: userId, username, role }, SECRET);
-    res.json({ token, username, role, id: userId });
+
+    res.json({ 
+      token, 
+      username, 
+      role, 
+      id: userId 
+    });
   } catch (e) {
-    res.status(400).json({ error: 'Username taken' });
+    console.error(e);
+    if (e.code === '23505') { // unique violation
+      res.status(400).json({ error: 'Username already taken' });
+    } else {
+      res.status(500).json({ error: 'Registration failed' });
+    }
   }
 });
 
 app.post('/api/auth/login', async (req, res) => {
-  const { username, password, role } = req.body;
-  const user = await db.prepare('SELECT * FROM users WHERE username = ?').get(username);
-  
-  if (user && bcrypt.compareSync(password, user.password_hash)) {
-    if (role && user.role !== role) {
-      return res.status(403).json({ error: `User is not a ${role}` });
+  const { username, password } = req.body;
+
+  try {
+    const user = await get('SELECT * FROM users WHERE username = $1', [username]);
+    
+    if (!user || !bcrypt.compareSync(password, user.password_hash)) {
+      return res.status(401).json({ error: 'Invalid credentials' });
     }
-    const token = jwt.sign({ id: user.id, username, role: user.role }, SECRET);
+
+    const token = jwt.sign({ 
+      id: user.id, 
+      username: user.username, 
+      role: user.role 
+    }, SECRET);
+
     res.json({ 
       token, 
-      id: user.id, 
-      username, 
+      username: user.username, 
       role: user.role, 
-      total_xp: user.total_xp, 
-      streak: user.streak 
+      id: user.id 
     });
-  } else {
-    res.status(401).json({ error: 'Invalid credentials' });
+  } catch (e) {
+    console.error(e);
+    res.status(500).json({ error: 'Login failed' });
   }
 });
 
