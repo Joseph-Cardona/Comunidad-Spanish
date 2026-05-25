@@ -1,107 +1,106 @@
-const Database = require('better-sqlite3');
+// server/db.js
 const path = require('path');
-const fs = require('fs');
 
-const dbPath = path.join(__dirname, 'lang.db');
-const db = new Database(dbPath);
+let db;
 
-// Initialize schema (SQLite syntax)
-function init() {
-  db.exec(`
-    CREATE TABLE IF NOT EXISTS users (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      username TEXT UNIQUE NOT NULL,
-      password_hash TEXT NOT NULL,
-      role TEXT DEFAULT 'client',
-      total_xp INTEGER DEFAULT 0,
-      streak INTEGER DEFAULT 0,
-      last_lesson_at DATETIME
-    );
+if (process.env.DATABASE_URL) {
+  // Neon PostgreSQL - Production
+  const { Pool } = require('pg');
+  db = new Pool({
+    connectionString: process.env.DATABASE_URL,
+    ssl: { rejectUnauthorized: false }
+  });
+  console.log('✅ Connected to Neon PostgreSQL');
+} else {
+  // SQLite - Local Development
+  const Database = require('better-sqlite3');
+  const dbPath = path.join(__dirname, 'lang.db');
+  db = new Database(dbPath);
+  console.log('✅ Using SQLite (Local)');
+}
 
-    CREATE TABLE IF NOT EXISTS lessons (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      title TEXT NOT NULL,
-      content TEXT NOT NULL,
-      unit INTEGER DEFAULT 1,
-      level TEXT DEFAULT 'A1',
-      type TEXT DEFAULT 'Lesson',
-      xp_reward INTEGER DEFAULT 10,
-      steps TEXT
-    );
+// Unified interface
+const query = async (sql, params = []) => {
+  if (db.query) { // Postgres
+    const res = await db.query(sql, params);
+    return res.rows;
+  } else { // SQLite
+    const stmt = db.prepare(sql);
+    return sql.trim().toLowerCase().startsWith('select') 
+      ? stmt.all(...params) 
+      : stmt.run(...params);
+  }
+};
 
-    CREATE TABLE IF NOT EXISTS progress (
-      user_id INTEGER,
-      lesson_id INTEGER,
-      completed_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-      FOREIGN KEY(user_id) REFERENCES users(id),
-      FOREIGN KEY(lesson_id) REFERENCES lessons(id),
-      PRIMARY KEY (user_id, lesson_id)
-    );
+const get = async (sql, params = []) => {
+  if (db.query) {
+    const res = await db.query(sql, params);
+    return res.rows[0];
+  } else {
+    return db.prepare(sql).get(...params);
+  }
+};
 
-    CREATE TABLE IF NOT EXISTS activity (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      user_id INTEGER,
-      message TEXT NOT NULL,
-      created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-      FOREIGN KEY(user_id) REFERENCES users(id)
-    );
+const run = async (sql, params = []) => {
+  if (db.query) {
+    await db.query(sql, params);
+    return { lastID: null };
+  } else {
+    return db.prepare(sql).run(...params);
+  }
+};
 
-    CREATE TABLE IF NOT EXISTS posts (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      user_id INTEGER,
-      content TEXT NOT NULL,
-      created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-      FOREIGN KEY(user_id) REFERENCES users(id)
-    );
+// Initialize database schema
+async function initDB() {
+  try {
+    if (db.query) {
+      // PostgreSQL schema for Neon
+      await db.query(`
+        CREATE TABLE IF NOT EXISTS users (
+          id SERIAL PRIMARY KEY,
+          username TEXT UNIQUE NOT NULL,
+          password_hash TEXT NOT NULL,
+          role TEXT DEFAULT 'client',
+          total_xp INTEGER DEFAULT 0,
+          streak INTEGER DEFAULT 0,
+          last_lesson_at TIMESTAMPTZ DEFAULT NOW()
+        );
 
-    CREATE TABLE IF NOT EXISTS board_nodes (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      user_id INTEGER,
-      x REAL NOT NULL,
-      y REAL NOT NULL,
-      title TEXT,
-      content TEXT,
-      created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-      FOREIGN KEY(user_id) REFERENCES users(id)
-    );
+        CREATE TABLE IF NOT EXISTS lessons (
+          id SERIAL PRIMARY KEY,
+          title TEXT NOT NULL,
+          unit INTEGER,
+          type TEXT,
+          content TEXT,
+          xp_reward INTEGER DEFAULT 10,
+          steps JSONB
+        );
 
-    CREATE TABLE IF NOT EXISTS board_comments (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      node_id INTEGER,
-      user_id INTEGER,
-      content TEXT NOT NULL,
-      created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-      FOREIGN KEY(node_id) REFERENCES board_nodes(id) ON DELETE CASCADE,
-      FOREIGN KEY(user_id) REFERENCES users(id)
-    );
-  `);
+        CREATE TABLE IF NOT EXISTS board_nodes (
+          id SERIAL PRIMARY KEY,
+          user_id INTEGER REFERENCES users(id),
+          x REAL NOT NULL,
+          y REAL NOT NULL,
+          title TEXT,
+          content TEXT,
+          created_at TIMESTAMPTZ DEFAULT NOW()
+        );
 
-  // Seed initial lessons if empty
-  const count = db.prepare('SELECT COUNT(*) as count FROM lessons').get().count;
-  if (count === 0) {
-    const lessonsPath = path.join(__dirname, 'lessons.json');
-    if (fs.existsSync(lessonsPath)) {
-      const lessonsData = JSON.parse(fs.readFileSync(lessonsPath, 'utf8'));
-      const insert = db.prepare(`
-        INSERT INTO lessons (title, content, unit, level, type, xp_reward, steps) 
-        VALUES (?, ?, ?, ?, ?, ?, ?)
+        CREATE TABLE IF NOT EXISTS comments (
+          id SERIAL PRIMARY KEY,
+          node_id INTEGER REFERENCES board_nodes(id) ON DELETE CASCADE,
+          user_id INTEGER REFERENCES users(id),
+          content TEXT,
+          created_at TIMESTAMPTZ DEFAULT NOW()
+        );
       `);
-      
-      const transaction = db.transaction((lessons) => {
-        for (const l of lessons) {
-          insert.run(l.title, l.content, l.unit, l.level, l.type, l.xp_reward, JSON.stringify(l.steps || []));
-        }
-      });
-      
-      transaction(lessonsData);
-      console.log(`Seeded ${lessonsData.length} lessons from JSON.`);
+      console.log('✅ Neon database initialized');
     }
+  } catch (err) {
+    console.error('DB Init Error:', err);
   }
 }
 
-init();
+initDB();
 
-module.exports = {
-  db,
-  prepare: (text) => db.prepare(text)
-};
+module.exports = { query, get, run, db };
