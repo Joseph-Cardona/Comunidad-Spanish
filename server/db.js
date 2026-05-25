@@ -24,31 +24,27 @@ async function get(text, params = []) {
 }
 
 async function init() {
+  // Create tables (safe on first deploy)
   await pool.query(`
     CREATE TABLE IF NOT EXISTS users (
-      id        SERIAL PRIMARY KEY,
-      username  TEXT UNIQUE NOT NULL,
+      id            SERIAL PRIMARY KEY,
+      username      TEXT UNIQUE NOT NULL,
       password_hash TEXT NOT NULL,
-      role      TEXT DEFAULT 'client',
-      total_xp  INTEGER DEFAULT 0,
-      streak    INTEGER DEFAULT 0,
+      role          TEXT DEFAULT 'client',
+      total_xp      INTEGER DEFAULT 0,
+      streak        INTEGER DEFAULT 0,
       last_lesson_at TIMESTAMPTZ
     );
 
     CREATE TABLE IF NOT EXISTS lessons (
       id        SERIAL PRIMARY KEY,
       title     TEXT NOT NULL,
-      content   TEXT NOT NULL,
-      unit      INTEGER DEFAULT 1,
-      level     TEXT DEFAULT 'A1',
-      type      TEXT DEFAULT 'Lesson',
-      xp_reward INTEGER DEFAULT 10,
-      steps     TEXT
+      content   TEXT NOT NULL
     );
 
     CREATE TABLE IF NOT EXISTS progress (
-      user_id    INTEGER REFERENCES users(id),
-      lesson_id  INTEGER REFERENCES lessons(id),
+      user_id      INTEGER REFERENCES users(id),
+      lesson_id    INTEGER REFERENCES lessons(id),
       completed_at TIMESTAMPTZ DEFAULT NOW(),
       PRIMARY KEY (user_id, lesson_id)
     );
@@ -84,6 +80,16 @@ async function init() {
       content    TEXT NOT NULL,
       created_at TIMESTAMPTZ DEFAULT NOW()
     );
+  `);
+
+  // Migrate lessons table — add missing columns if they don't exist yet.
+  // ALTER TABLE ADD COLUMN IF NOT EXISTS is safe to run repeatedly.
+  await pool.query(`
+    ALTER TABLE lessons ADD COLUMN IF NOT EXISTS unit      INTEGER DEFAULT 1;
+    ALTER TABLE lessons ADD COLUMN IF NOT EXISTS level     TEXT DEFAULT 'A1';
+    ALTER TABLE lessons ADD COLUMN IF NOT EXISTS type      TEXT DEFAULT 'Lesson';
+    ALTER TABLE lessons ADD COLUMN IF NOT EXISTS xp_reward INTEGER DEFAULT 10;
+    ALTER TABLE lessons ADD COLUMN IF NOT EXISTS steps     TEXT;
   `);
 
   // Seed lessons if table is empty
