@@ -16,9 +16,7 @@ app.use(cors({
     'http://localhost:5173',
     'http://localhost:3000'
   ],
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  credentials: true
 }));
 
 app.use(express.json());
@@ -39,67 +37,42 @@ const authenticate = async (req, res, next) => {
   }
 };
 
-// ====================== AUTH ROUTES ======================
-
+// ====================== AUTH ======================
 app.post('/api/auth/register', async (req, res) => {
   const { username, password, role = 'client' } = req.body;
-  
-  if (!username || !password) {
-    return res.status(400).json({ error: 'Username and password are required' });
-  }
+  if (!username || !password) return res.status(400).json({ error: 'Username and password required' });
 
   const hash = bcrypt.hashSync(password, 10);
-
   try {
     const result = await query(
       'INSERT INTO users (username, password_hash, role) VALUES ($1, $2, $3) RETURNING id',
       [username, hash, role]
     );
-
     const userId = result[0].id;
     const token = jwt.sign({ id: userId, username, role }, SECRET);
-
     res.json({ token, username, role, id: userId });
   } catch (e) {
     console.error(e);
-    if (e.code === '23505') {
-      res.status(400).json({ error: 'Username already taken' });
-    } else {
-      res.status(500).json({ error: 'Registration failed' });
-    }
+    if (e.code === '23505') res.status(400).json({ error: 'Username already taken' });
+    else res.status(500).json({ error: 'Registration failed' });
   }
 });
 
 app.post('/api/auth/login', async (req, res) => {
   const { username, password } = req.body;
-
   try {
     const user = await get('SELECT * FROM users WHERE username = $1', [username]);
-    
     if (!user || !bcrypt.compareSync(password, user.password_hash)) {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
-
-    const token = jwt.sign({ 
-      id: user.id, 
-      username: user.username, 
-      role: user.role 
-    }, SECRET);
-
-    res.json({ 
-      token, 
-      username: user.username, 
-      role: user.role, 
-      id: user.id 
-    });
+    const token = jwt.sign({ id: user.id, username: user.username, role: user.role }, SECRET);
+    res.json({ token, username: user.username, role: user.role, id: user.id });
   } catch (e) {
-    console.error(e);
     res.status(500).json({ error: 'Login failed' });
   }
 });
 
 // ====================== LESSONS ======================
-
 app.get('/api/lessons', authenticate, async (req, res) => {
   try {
     const lessons = await query(`
@@ -109,41 +82,51 @@ app.get('/api/lessons', authenticate, async (req, res) => {
     `, [req.user.id]);
     res.json(lessons);
   } catch (e) {
-    console.error(e);
     res.status(500).json({ error: 'Failed to fetch lessons' });
   }
 });
 
-app.post('/api/lessons/:id/complete', authenticate, async (req, res) => {
-  const lessonId = req.params.id;
+// ====================== BOARD ======================
+app.get('/api/board/nodes', async (req, res) => {
   try {
-    const lesson = await get('SELECT * FROM lessons WHERE id = $1', [lessonId]);
-    if (!lesson) return res.status(404).json({ error: 'Lesson not found' });
+    const nodes = await query(`
+      SELECT n.*, u.username as ownerUsername 
+      FROM board_nodes n 
+      JOIN users u ON n.user_id = u.id
+    `);
 
-    const alreadyCompleted = await get(
-      'SELECT 1 FROM progress WHERE user_id = $1 AND lesson_id = $2', 
-      [req.user.id, lessonId]
-    );
+    const comments = await query(`
+      SELECT c.*, u.username as ownerUsername 
+      FROM board_comments c 
+      JOIN users u ON c.user_id = u.id
+    `);
 
-    if (!alreadyCompleted) {
-      await query('INSERT INTO progress (user_id, lesson_id) VALUES ($1, $2)', [req.user.id, lessonId]);
-      await query('UPDATE users SET total_xp = total_xp + $1 WHERE id = $2', [lesson.xp_reward, req.user.id]);
-      
-      res.json({ 
-        message: 'Lesson completed', 
-        xp_gained: lesson.xp_reward, 
-        first_time: true 
-      });
-    } else {
-      res.json({ message: 'Lesson already completed', xp_gained: 0, first_time: false });
-    }
+    const nodesWithComments = nodes.map(node => ({
+      ...node,
+      comments: comments.filter(c => c.node_id === node.id)
+    }));
+
+    res.json(nodesWithComments);
   } catch (e) {
-    console.error(e);
-    res.status(500).json({ error: 'Internal server error' });
+    res.status(500).json({ error: 'Failed to fetch board' });
   }
 });
 
-// Health check
+app.post('/api/board/nodes', authenticate, async (req, res) => {
+  const { x, y, title, content } = req.body;
+  if (!title || !content) return res.status(400).json({ error: 'Title and content required' });
+
+  try {
+    const result = await query(
+      'INSERT INTO board_nodes (user_id, x, y, title, content) VALUES ($1, $2, $3, $4, $5) RETURNING id',
+      [req.user.id, x, y, title, content]
+    );
+    res.json({ id: result[0].id });
+  } catch (e) {
+    res.status(500).json({ error: 'Failed to create node' });
+  }
+});
+
 app.get('/api/health', (req, res) => res.json({ status: 'ok' }));
 
 app.listen(PORT, () => {
